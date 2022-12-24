@@ -1,0 +1,61 @@
+@import "../.././assets/styles/main.css";
+
+.main-alert_wrapp {
+  @apply max-w-[400px] fixed z-40 top-3 right-3 rounded-lg border-solid border border-white;
+  animation: fadeInRight 0.5s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal;
+  width: calc(100% - 1.5rem);
+  .main-alert_icon {
+    @apply flex-shrink-0 w-5 h-5;
+  }
+  span,
+  a,
+  p,
+  div {
+    @apply text-white text-sm font-medium;
+  }
+  a {
+    @apply font-semibold underline;
+    &:hover {
+      @apply text-white;
+    }
+  }
+  .main-alert_close-button {
+    @apply ml-auto -mx-1.5 -my-1.5 inline-flex h-8 w-8 bg-transparent dark:bg-transparent text-white rounded-lg focus:ring-2 p-1.5;
+    .main-alert_close-icon {
+      @apply w-5 h-5 text-white dark:text-white;
+    }
+  }
+  .main-alert_icon {
+    @apply text-white dark:text-white mr-3;
+  }
+  &.blue {
+    @apply bg-[#6173FFD1] dark:bg-[#6173FFD1];
+    .main-alert_close-button {
+      @apply focus:ring-blue-400 hover:bg-[#0519AD87] dark:text-white dark:hover:bg-[#0519AD87];
+    }
+  }
+  &.red {
+    @apply bg-[#C70011D1] dark:bg-[#C70011D1];
+    .main-alert_close-button {
+      @apply focus:ring-red-400 hover:bg-[#6B0009B5] dark:text-white dark:hover:bg-[#6B0009B5];
+    }
+  }
+  &.green {
+    @apply bg-[#0E6B00B5] dark:bg-[#0E6B00B5];
+    .main-alert_close-button {
+      @apply focus:ring-green-400 hover:bg-[#083D00B5] dark:text-white dark:hover:bg-[#083D00B5];
+    }
+  }
+  &.yellow {
+    @apply bg-[#BFC200C9] dark:bg-[#BFC200C9];
+    .main-alert_close-button {
+      @apply focus:ring-yellow-400 hover:bg-[#3C3D00B5] dark:text-white dark:hover:bg-[#3C3D00B5];
+    }
+  }
+  &.gray {
+    @apply bg-[#5E5E5ECC] dark:bg-[#5E5E5ECC];
+    .main-alert_close-button {
+      @apply focus:ring-gray-400 hover:bg-[#363636CC] dark:text-white dark:hover:bg-[#363636CC];
+    }
+  }
+}

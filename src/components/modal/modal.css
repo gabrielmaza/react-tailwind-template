@@ -1,0 +1,17 @@
+@import "../.././assets/styles/main.css";
+
+.custom-modal {
+  @apply overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-full justify-center items-center hidden;
+  &.active {
+    @apply flex;
+    background-color: #272838de;
+  }
+}
+
+.lightbox-modal {
+  @apply fixed top-0 right-0 left-0 z-50 h-full min-h-screen w-full md:inset-0 justify-center items-center hidden;
+  &.active {
+    @apply flex;
+    background-color: #272838de;
+  }
+}

@@ -1,0 +1,16 @@
+@import "../.././assets/styles/main.css";
+
+.input-toggle-switch_wrapp {
+  @apply inline-flex relative items-center mb-4 cursor-pointer;
+  .input-toggle-switch_button {
+    @apply w-11 h-6 bg-gray-600 rounded-full focus:ring-4 focus:ring-green-200 dark:focus:ring-green-200 dark:bg-gray-900 after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600;
+  }
+  .input-toggle-switch_span {
+    @apply ml-3 text-sm cursor-default font-medium text-gray-900 dark:text-gray-300;
+  }
+  &.checked {
+    .input-toggle-switch_button {
+      @apply bg-green-600 dark:bg-green-500 after:translate-x-full after:transition-all dark:border-gray-600;
+    }
+  }
+}

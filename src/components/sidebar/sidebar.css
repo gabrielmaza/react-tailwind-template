@@ -1,0 +1,15 @@
+@import "../.././assets/styles/main.css";
+
+.custom-sidebar_wrapp {
+  @apply fixed w-full max-w-[220px] md:max-w-[320px] top-0 left-0 bottom-1 m-3 z-50;
+  height: calc(100vh - 16px);
+  animation: fadeInLeft 0.3s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal
+    forwards;
+  .custom-sidebar {
+    @apply w-full h-full overflow-y-auto py-4 px-3 rounded-lg bg-white shadow dark:bg-gray-700;
+  }
+}
+.custom-sidebar-overlay {
+  @apply fixed w-full h-screen z-30 block top-0 left-0;
+  background-color: #272838de;
+}

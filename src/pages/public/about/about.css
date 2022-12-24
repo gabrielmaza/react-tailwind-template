@@ -1,0 +1,51 @@
+@import "../../.././assets/styles/main.css";
+
+.about-wrapp {
+  @apply w-full flex flex-col gap-6 container-100vh-180 mt-[-80px];
+  .about-wrapp_main-section {
+    @apply py-0 lg:py-10 px-0 lg:px-10 w-full h-[460px] md:h-[560px] mx-auto flex flex-col gap-6;
+    background-image: url("./src/assets/img/products/landing-gaming-phone.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: backgroundScaleUp 20s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1
+      normal forwards;
+    background-position: top;
+
+    /* @media (min-width: 992px) {
+      background-position: center;
+    } */
+    @media (min-width: 556px) {
+      background-image: url("./src/assets/img/products/landing-gaming.jpg");
+    }
+    .about-wrapp_main-title {
+      @apply font-extrabold text-xl lg:text-[60px] leading-none uppercase;
+      &.amin1 {
+        transform: translateX(-100%);
+        animation: fadeInLeft 1.5s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0.5s 1
+          normal forwards;
+      }
+      &.amin2 {
+        transform: translateX(-100%);
+        animation: fadeInLeft 1.5s cubic-bezier(0.92, -0.01, 0.1, 0.99) 1s 1
+          normal forwards;
+      }
+      &.amin3 {
+        transform: translateX(-100%);
+        animation: fadeInLeft 1.5s cubic-bezier(0.92, -0.01, 0.1, 0.99) 1.5s 1
+          normal forwards;
+      }
+    }
+    .about-wrapp_main-subtitle {
+      @apply font-semibold text-sm md:text-lg;
+      transform: translateY(100%);
+      animation: fadeInBottom 0.5s cubic-bezier(0.92, -0.01, 0.1, 0.99) 2s 1
+        normal forwards;
+    }
+    .fade-in-left {
+      transform: translateX(-120%);
+      animation: fadeInLeft 0.5s cubic-bezier(0, 1, 0.04, 1.01) 2.5s 1 normal
+        forwards;
+    }
+  }
+}
