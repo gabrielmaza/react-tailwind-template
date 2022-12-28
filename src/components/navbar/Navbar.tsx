@@ -36,42 +36,42 @@ const Navbar = () => {
             </Link>
           </h1>
           <ul className="hidden md:flex text-white">
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700">
+            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
               <Link to="/new-product-form" title="Sell product">
                 <PlusCircleIcon className="mx-2 h-5" />
               </Link>
             </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700">
+            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
               <Link to="/purchases" title="My purchases">
                 <SortDescendingIcon className="mx-2 h-5" />
               </Link>
             </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700">
+            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
               <Link to="/sales" title="My sales">
                 <SortAscendingIcon className="mx-2 h-5" />
               </Link>
             </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700">
+            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
               <Link to="/my-products" title="My products">
                 <DesktopComputerIcon className="mx-2 h-5" />
               </Link>
             </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700">
+            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
               <Link to="/support" title="Support">
                 <SupportIcon className="mx-2 h-5" />
               </Link>
             </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700">
+            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
               <Link to="/profile" title="Profile">
                 <UserIcon className="mx-2 h-5" />
               </Link>
             </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700">
+            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
               <Link to="/favorite" title="Favorites">
                 <HeartIcon className="mx-2 h-5" />
               </Link>
             </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700">
+            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
               <Link to="/notifications" title="Notifications">
                 <BellIcon className="mx-2 h-5" />
               </Link>

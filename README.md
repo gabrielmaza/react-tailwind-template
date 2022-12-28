@@ -5,4 +5,5 @@
 ###### To run:
 
 npm install
+cd src
 npm run dev
