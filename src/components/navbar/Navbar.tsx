@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import ButtonLink from "../button/ButtonLink";
 import Button from "../button/Button";
 import useClickAwayDiv from "../../hooks/useClickAwayDiv";
+import { BrandLogo } from "../brand-logo/BrandLogo";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -32,7 +33,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <h1 className="text-white text-3xl font-bold mr-4 sm:text-4xl">
             <Link to="/" title="Logo enlace">
-              Brand.
+              <BrandLogo />
             </Link>
           </h1>
           <ul className="hidden md:flex text-white">

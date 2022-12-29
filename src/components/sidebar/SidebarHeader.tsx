@@ -1,21 +1,14 @@
 import React from "react";
+import { BrandLogo } from "../brand-logo/BrandLogo";
 
 export const SidebarHeader = () => {
   return (
-    <div className="sidebar-header">
-      <div className="logo" style={{ width: "auto" }}>
-        <span
-          className=""
-          style={{
-            fontSize: "40px",
-            fontWeight: "bold",
-            height: "auto",
-            maxWidth: "100%",
-          }}
-        >
-          Brand.
-        </span>
-      </div>
+    <div className="sidebar_header">
+      {/* <div className="sidebar_logo">
+        <span className="sidebar_logo-span">Brand.</span>
+      </div> */}
+      {/* <img className="sidebar_logo" src="" alt="" /> */}
+      <BrandLogo />
     </div>
   );
 };

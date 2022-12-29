@@ -1,0 +1,8 @@
+@import "../.././assets/styles/main.css";
+
+.sidebar_logo {
+  @apply w-full max-w-[100px];
+  .brand-logo_path {
+    fill: white;
+  }
+}

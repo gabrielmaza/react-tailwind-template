@@ -17,23 +17,6 @@ const client = new ApolloClient({
   }),
 });
 
-// const query = gql`
-//   query allPersons {
-//     persons {
-//       id
-//       first_name
-//       last_name
-//       email
-//       gender
-//       ip_address
-//     }
-//   }
-// `;
-
-// client.query({ query }).then((response) => {
-//   console.log(response.data);
-// });
-
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

@@ -1,15 +1,16 @@
 @import "../.././assets/styles/main.css";
 
 .sidebar_wrapp {
-  @apply fixed w-full max-w-[220px] md:max-w-[320px] top-0 left-0 bottom-1 m-3 z-50;
-  height: calc(100vh - 16px);
+  @apply fixed lg:relative w-full max-w-[220px] lg:max-w-full md:max-w-[320px] h-full top-0 left-0 bottom-1 lg:bottom-0 m-3 lg:m-0 z-50 lg:z-0;
   animation: fadeInLeft 0.3s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal
     forwards;
-  .sidebar-content {
+  .sidebar_content {
     @apply flex flex-col gap-4 w-full h-full overflow-y-auto p-5 rounded-lg bg-white shadow dark:bg-gray-700;
+    .sidebar_header {
+      @apply w-full h-auto;
+    }
   }
 }
 .custom-sidebar-overlay {
-  @apply fixed w-full h-screen z-30 block top-0 left-0;
-  background-color: #272838de;
+  @apply block lg:hidden fixed w-full h-screen z-30 top-0 left-0 bg-[#272838de];
 }
