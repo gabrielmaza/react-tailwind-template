@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import React, { useState, ReactNode } from "react";
 import useClickAwayDiv from "../../../hooks/useClickAwayDiv";
-
+import { useHandleShow } from "../../../hooks/useHandleShow";
 interface DropdownProps {
   label?: string;
   icon?: any;
@@ -9,15 +9,8 @@ interface DropdownProps {
 }
 
 const Dropdown = ({ label, icon, children }: DropdownProps) => {
-  const [show, setShow] = useState(false);
+  const { show, handleChange, handleClose } = useHandleShow();
 
-  const handleChange = () => {
-    setShow(!show);
-  };
-
-  const handleClose = () => {
-    setShow(false);
-  };
   const [divRef] = useClickAwayDiv<HTMLDivElement>(handleClose);
 
   return (
@@ -34,7 +27,7 @@ const Dropdown = ({ label, icon, children }: DropdownProps) => {
       {/* Dropdown menu */}
       <div
         className={`absolute z-10 w-44 max-h-[300px] overflow-y-auto mt-2 bg-white rounded-lg divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 ${
-          !show ? "hidden" : ""
+          !show && "hidden"
         }`}
       >
         {children}

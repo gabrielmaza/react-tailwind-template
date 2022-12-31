@@ -9,7 +9,7 @@ const ProductDetail2 = () => {
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-2 justify-between">
           <p className="font-bold text-gray-700 dark:text-gray-400">
-            21 de Jul | 1234 downloads
+            Jul 21 | 123 downloads
           </p>
           <div className="flex gap-3">
             <Button

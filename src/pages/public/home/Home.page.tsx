@@ -52,10 +52,13 @@ const Home = () => {
               className={`grid ${
                 !toggleSidebar
                   ? "grid-cols-[minmax(0px,_1fr)]"
-                  : "grid-cols-[290px_minmax(900px,_1fr)]"
+                  : "lg:grid-cols-[290px_minmax(200px,_1fr)]"
               }`}
             >
-              <Sidebar toggleSidebar={toggleSidebar} />
+              <Sidebar
+                toggleSidebar={toggleSidebar}
+                handleClick={handleToggleSidebar}
+              />
               <div className="flex flex-col gap-6 w-full">
                 <div className="main-container">
                   <div className="flex gap-3">

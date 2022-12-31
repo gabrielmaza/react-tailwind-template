@@ -15,7 +15,7 @@ const Support = () => {
           <div className="main-container">
             <BreadCrumb />
             <div className="flex flex-col gap-6">
-              <PageTitle label="Soporte" />
+              <PageTitle label="Support" />
               {/* Accordion */}
               <AccordionSupport />
               <h2 className="mb-2 pr-8 text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -43,7 +43,7 @@ const Support = () => {
                     rel="nofollow"
                     className="text-indigo-600 dark:text-blue-500 hover:underline"
                   >
-                    Facebook: https://www.facebook.com/ Instagram:
+                    Facebook: https://www.facebook.com/
                   </a>
                 </li>
                 <li>

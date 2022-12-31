@@ -28,7 +28,7 @@ const ProductDetailSidebar = () => {
         <div className="flex items-center gap-2 mb-4">
           <ShoppingCartIcon className="w-6 h-6" />
           <h2 className="text-md md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Comprar
+            Purchase
           </h2>
         </div>
         <form className="w-full rounded-lg text-gray-700">
@@ -36,11 +36,11 @@ const ProductDetailSidebar = () => {
             <div className="mb-4">
               <div className="flex items-center gap-2">
                 <h3 className="mb-1 text-lg font-normal tracking-tight text-gray-900 dark:text-gray-400">
-                  Medio de pago
+                  Payment method
                 </h3>
               </div>
               <div className="mb-3">
-                <Dropdown label="Elegir medio de pago">
+                <Dropdown label="Payment method">
                   <ul
                     className="py-1 text-sm text-gray-700 dark:text-gray-200"
                     aria-labelledby="dropdownActionButton"
@@ -50,7 +50,7 @@ const ProductDetailSidebar = () => {
                         href="#"
                         className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        Tarjeta de débito
+                        Debit
                       </a>
                     </li>
                     <li className="p-0">
@@ -58,7 +58,7 @@ const ProductDetailSidebar = () => {
                         href="#"
                         className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        Tarjeta de crédito
+                        Credit
                       </a>
                     </li>
                   </ul>
@@ -67,19 +67,12 @@ const ProductDetailSidebar = () => {
             </div>
             <div className="mb-4">
               <div className="mb-3">
-                <InputText
-                  type="number"
-                  placeholder="Número de tarjeta"
-                  required
-                />
+                <InputText type="number" placeholder="Card number" required />
               </div>
             </div>
             <div className="mb-4">
               <div className="mb-3">
-                <InputText
-                  placeholder="Nombre como figura en la tarjeta"
-                  required
-                />
+                <InputText placeholder="Card name" required />
               </div>
             </div>
             <div className="mb-4">
@@ -98,11 +91,11 @@ const ProductDetailSidebar = () => {
             <div className="mb-4">
               <div className="flex items-center gap-2">
                 <h3 className="mb-1 text-lg font-normal tracking-tight text-gray-900 dark:text-gray-400">
-                  Dirección de envío
+                  Shipping Address
                 </h3>
               </div>
               <div className="mb-3">
-                <Dropdown label="País">
+                <Dropdown label="Country">
                   <ul
                     className="py-1 text-sm text-gray-700 dark:text-gray-200"
                     aria-labelledby="dropdownActionButton"
@@ -179,35 +172,17 @@ const ProductDetailSidebar = () => {
                         Lorem ipsum
                       </a>
                     </li>
-                    <li className="p-0">
-                      <a
-                        href="#"
-                        className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Lorem ipsum
-                      </a>
-                    </li>
-                    <li className="p-0">
-                      <a
-                        href="#"
-                        className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Lorem ipsum
-                      </a>
-                    </li>
-                    <li className="p-0">
-                      <a
-                        href="#"
-                        className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Lorem ipsum
-                      </a>
-                    </li>
                   </ul>
                 </Dropdown>
               </div>
               <div className="mb-3">
-                <Dropdown label="Provincia">
+                <InputText type="text" placeholder="Address line 1" required />
+              </div>
+              <div className="mb-3">
+                <InputText type="text" placeholder="Address line 2" required />
+              </div>
+              <div className="mb-3">
+                <Dropdown label="City">
                   <ul
                     className="py-1 text-sm text-gray-700 dark:text-gray-200"
                     aria-labelledby="dropdownActionButton"
@@ -232,7 +207,7 @@ const ProductDetailSidebar = () => {
                 </Dropdown>
               </div>
               <div className="mb-3">
-                <Dropdown label="Localidad">
+                <Dropdown label="State / Province / Region">
                   <ul
                     className="py-1 text-sm text-gray-700 dark:text-gray-200"
                     aria-labelledby="dropdownActionButton"
@@ -242,7 +217,7 @@ const ProductDetailSidebar = () => {
                         href="#"
                         className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        Tucumán
+                        State 1
                       </a>
                     </li>
                     <li className="p-0">
@@ -250,33 +225,14 @@ const ProductDetailSidebar = () => {
                         href="#"
                         className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        Córdoba
+                        State 2
                       </a>
                     </li>
                   </ul>
                 </Dropdown>
               </div>
               <div className="mb-3">
-                <InputText placeholder="Calle" required />
-              </div>
-              <div className="mb-3">
-                <InputText type="number" placeholder="Número" required />
-              </div>
-              <div className="mb-3">
-                <div className="flex gap-3">
-                  <div>
-                    <InputText placeholder="Calle" required />
-                  </div>
-                  <div>
-                    <InputText type="number" placeholder="Número" required />
-                  </div>
-                </div>
-              </div>
-              <div className="mb-3">
-                <InputText
-                  placeholder="Piso / Departamento (Opcional)"
-                  required
-                />
+                <InputText placeholder="Zip / Postal Code" required />
               </div>
             </div>
           </div>
@@ -297,18 +253,18 @@ const ProductDetailSidebar = () => {
         <div className="flex flex-col items-center gap-5">
           <BadgeCheckIcon className="w-10 h-10 fill-gray-900 dark:fill-green-400" />
           <span className="text-md md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Compra realizada
+            Purchase made!
           </span>
           <div className="flex gap-4">
             <ButtonLink
-              label="Ver en compras"
-              title="Ver en compras"
-              url="/sales"
+              label="Go to purchases"
+              title="Go to purchases"
+              url="/purchases"
               color="transparent-bordered"
             />
             <ButtonLink
-              label="Seguir comprando"
-              title="Seguir comprando"
+              label="Continue buying"
+              title="Continue buying"
               url="/"
               color="pink"
             />
@@ -317,56 +273,45 @@ const ProductDetailSidebar = () => {
       </div>
 
       <div className="w-full py-4">
-        <div className="mb-6">
-          <div className="flex items-center gap-2">
-            <PencilAltIcon className="w-4 h-4 fill-gray-900 dark:fill-gray-400" />
-            <h3 className="mb-1 text-lg font-normal tracking-tight text-gray-900 dark:text-gray-400">
-              Publicado en
-            </h3>
-          </div>
-          <p className="mb-3 font-bold text-gray-700 dark:text-gray-400">
-            Mercadolibre
-          </p>
-        </div>
-        <div className="mb-6">
+        <div className="mb-2">
           <div className="flex items-center gap-2">
             <UserCircleIcon className="w-4 h-4 fill-gray-900 dark:fill-gray-400" />
             <h3 className="mb-1 text-lg font-normal tracking-tight text-gray-900 dark:text-gray-400">
-              Vendedor
+              Seller
             </h3>
           </div>
           <p className="mb-3 font-bold text-gray-700 dark:text-gray-400">
             @DIAMONDSYSTEMS
           </p>
           <p className="mb-3 font-bold text-gray-700 dark:text-gray-400">
-            6 años vendiendo en Mercado Libre
+            6 years selling in our store
           </p>
           <p className="mb-3 font-bold text-gray-700 dark:text-gray-400">
-            24028 ventas
+            2879 sales
           </p>
         </div>
-        <div className="mb-6">
+        <div className="mb-2">
           <div className="flex items-center gap-2">
             <LocationMarkerIcon className="w-4 h-4 fill-gray-900 dark:fill-gray-400" />
             <h3 className="mb-1 text-lg font-normal tracking-tight text-gray-900 dark:text-gray-400">
-              Ubicación
+              Location
             </h3>
           </div>
           <p className="mb-3 font-bold text-gray-700 dark:text-gray-400">
-            San Justo, Buenos Aires
+            San Francisco, California
           </p>
         </div>
-        <div className="mb-6">
+        <div className="mb-2">
           <div className="flex items-center gap-2 mb-3">
             <BadgeCheckIcon className="w-4 h-4 fill-gray-900 dark:fill-green-400" />
             <p className="mb-1 text-lg font-bold tracking-tight text-gray-900 dark:text-gray-400">
-              Identidad validada
+              Validated identity
             </p>
           </div>
           <div className="flex items-center gap-2 mb-3">
             <BadgeCheckIcon className="w-4 h-4 fill-gray-900 dark:fill-green-400" />
             <p className="mb-1 text-lg font-bold tracking-tight text-gray-900 dark:text-gray-400">
-              Tarjeta validada
+              Validated credit card
             </p>
           </div>
         </div>

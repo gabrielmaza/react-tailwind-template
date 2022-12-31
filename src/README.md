@@ -17,6 +17,7 @@
     Flexible Layout
     In built practical demo
     i18n
+    Heroicons
     RTL Support
     Trusted Support
     Constantly Updates
