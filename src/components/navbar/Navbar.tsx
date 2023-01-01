@@ -6,7 +6,6 @@ import {
   HeartIcon,
   LogoutIcon,
   MenuAlt2Icon,
-  PlusCircleIcon,
   PlusIcon,
   SortAscendingIcon,
   SortDescendingIcon,
@@ -37,7 +36,7 @@ const Navbar = ({
   navbarUserAvatar = false,
 }: NavbarProps) => {
   // Floating Sidebar
-  const [toggFloatingSidebar, setToggFloatingSidebar] = useState(false);
+  const [toggFloatingSidebar, setToggFloatingSidebar] = useState(true);
   const handleToggFloatingSidebar = () => {
     setToggFloatingSidebar(!toggFloatingSidebar);
   };
@@ -159,8 +158,10 @@ const Navbar = ({
         </div>
       </ul>
       <FLoatingSidebar
+        right
         toggleSidebar={toggFloatingSidebar}
         handleClick={handleToggFloatingSidebar}
+        title="Notifications"
       />
     </div>
   );

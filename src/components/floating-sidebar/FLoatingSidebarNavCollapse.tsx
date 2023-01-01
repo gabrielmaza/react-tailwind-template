@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useHandleShow } from "../../hooks/useHandleShow";
 import "./floating-sidebar.css";
 
-interface SidebarNavCollapseProps {
+interface FloatingSidebarNavCollapseProps {
   label: string;
   icon?: any;
   collapseContent?: any;
@@ -12,28 +12,30 @@ interface SidebarNavCollapseProps {
   btnLinkTitle?: string;
 }
 
-export const SidebarNavCollapse = ({
+export const FloatingSidebarNavCollapse = ({
   label,
   icon,
   collapseContent,
   btnLinkUrl,
   btnLinkTitle,
-}: SidebarNavCollapseProps) => {
+}: FloatingSidebarNavCollapseProps) => {
   const { show, handleChange } = useHandleShow();
   return (
     <>
       {collapseContent ? (
         <div
-          className="sidebar_nav-collapse"
+          className="floating-sidebar_nav-collapse"
           onClick={handleChange}
           aria-hidden
         >
-          <div className="sidebar_nav-collapse-item">
-            <div className="sidebar_nav-collapse-label">
+          <div className="floating-sidebar_nav-collapse-item">
+            <div className="floating-sidebar_nav-collapse-label">
               {icon}
-              <span className="sidebar_nav-collapse-span">{label}</span>
+              <span className="floating-sidebar_nav-collapse-span">
+                {label}
+              </span>
             </div>
-            <span className="sidebar_nav-collapse-icon">
+            <span className="floating-sidebar_nav-collapse-icon">
               <svg
                 className={!show ? "rotate-0" : "rotate-180"}
                 stroke="currentColor"
@@ -55,21 +57,21 @@ export const SidebarNavCollapse = ({
           {/* Subnav */}
           {collapseContent && (
             <ul
-              className={`sidebar_nav-collapse-content ${
+              className={`floating-sidebar_nav-collapse-content ${
                 !show ? "h-0 opacity-0" : "h-auto opacity-100 fade-in-top"
               }`}
             >
               {collapseContent.map((item) => (
                 <div
-                  className="sidebar_nav-collapse-content-item"
+                  className="floating-sidebar_nav-collapse-content-item"
                   key={item.title}
                 >
                   <a
                     href={item.url}
                     title={item.title}
-                    className="sidebar_nav-collapse-content-link"
+                    className="floating-sidebar_nav-collapse-content-link"
                   >
-                    <span className="sidebar_nav-collapse-content-link-span">
+                    <span className="floating-sidebar_nav-collapse-content-link-span">
                       {item.label}
                     </span>
                   </a>
@@ -80,12 +82,12 @@ export const SidebarNavCollapse = ({
         </div>
       ) : (
         <Link
-          className="sidebar_nav-btn-link"
+          className="floating-sidebar_nav-btn-link"
           to={btnLinkUrl}
           title={btnLinkTitle}
         >
           {icon}
-          <span className="sidebar_nav-btn-link-span">{label}</span>
+          <span className="floating-sidebar_nav-btn-link-span">{label}</span>
         </Link>
       )}
     </>

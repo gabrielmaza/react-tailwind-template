@@ -1,38 +1,49 @@
 import { XIcon } from "@heroicons/react/solid";
 import React, { useState } from "react";
 import "./floating-sidebar.css";
-import InputToggleSwitch from "../inputs/toggle-switch/InputToggleSwitch";
-import { SidebarNav } from "./FLoatingSidebarNav";
-import { SidebarContent } from "./FLoatingSidebarContent";
-import { SidebarSection } from "./FLoatingSidebarSection";
+import { FloatingSidebarNav } from "./FLoatingSidebarNav";
+import { FloatingSidebarContent } from "./FLoatingSidebarContent";
+import { FloatingSidebarSection } from "./FLoatingSidebarSection";
 
 interface FLoatingSidebarProps {
   toggleSidebar: any;
   handleClick: () => void;
+  left?: boolean;
+  right?: boolean;
+  title: string;
 }
 
 const FLoatingSidebar = ({
   toggleSidebar,
   handleClick,
+  left = false,
+  right = false,
+  title,
 }: FLoatingSidebarProps) => {
   return (
-    <div className="layout-sidebar flex flex-auto flex-col">
-      <div className={`sidebar_wrapp ${!toggleSidebar && "hidden"}`}>
-        <SidebarContent>
+    <div className="flex flex-auto flex-col">
+      <div
+        className={`floating-sidebar_wrapp ${left && "left"} ${
+          right && "right"
+        } ${!toggleSidebar && "hidden"}`}
+      >
+        <FloatingSidebarContent>
           <button
-            className="sidebar_mobile-close-btn"
+            className="floating-sidebar_mobile-close-btn"
             type="button"
             onClick={handleClick}
           >
             <XIcon />
           </button>
-          <SidebarSection hrBottom>
-            <SidebarNav />
-          </SidebarSection>
-        </SidebarContent>
+          <FloatingSidebarSection hrBottom>
+            <h2 className="floating-sidebar_title">{title}</h2>
+          </FloatingSidebarSection>
+        </FloatingSidebarContent>
       </div>
       <div
-        className={`custom-sidebar-overlay ${!toggleSidebar ? "hidden" : ""}`}
+        className={`floating-custom-sidebar-overlay ${
+          !toggleSidebar ? "hidden" : ""
+        }`}
         onClick={handleClick}
       />
     </div>

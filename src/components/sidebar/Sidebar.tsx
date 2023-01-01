@@ -21,7 +21,7 @@ const Sidebar = ({
   handleClick,
 }: SidebarProps) => {
   return (
-    <div className="layout-sidebar flex flex-auto flex-col">
+    <div className="flex flex-auto flex-col">
       <div className={`sidebar_wrapp ${!toggleSidebar && "hidden"}`}>
         <SidebarContent>
           <button

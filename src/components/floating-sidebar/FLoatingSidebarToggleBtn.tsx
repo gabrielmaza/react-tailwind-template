@@ -1,15 +1,16 @@
 import { MenuAlt3Icon, XIcon } from "@heroicons/react/solid";
 import React, { useState } from "react";
+import "./floating-sidebar.css";
 
-interface SidebarToggleProps {
+interface FloatingSidebarToggleProps {
   toggleSidebar: any;
   handleClick: () => void;
 }
 
-export const SidebarToggleBtn = ({
+export const FloatingSidebarToggleBtn = ({
   toggleSidebar,
   handleClick,
-}: SidebarToggleProps) => {
+}: FloatingSidebarToggleProps) => {
   const [toggleIcon, setToggleIcon] = useState(true);
 
   return (

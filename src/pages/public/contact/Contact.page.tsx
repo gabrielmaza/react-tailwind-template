@@ -24,7 +24,7 @@ const Contact = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar navbarLogBtn />
       <div className="py-20 px-4 flex flex-col gap-6 container-100vh-180">
         <div className="flex flex-col-reverse gap-6 lg:flex-row">
           <div className="w-full max-w-lg mx-auto flex flex-col gap-6">

@@ -1,15 +1,13 @@
 import React from "react";
 import {
-  ArrowsExpandIcon,
   BellIcon,
   CurrencyDollarIcon,
   HeartIcon,
   SupportIcon,
   TableIcon,
-  TicketIcon,
   UserIcon,
 } from "@heroicons/react/solid";
-import { SidebarNavCollapse } from "./FLoatingSidebarNavCollapse";
+import { FloatingSidebarNavCollapse } from "./FLoatingSidebarNavCollapse";
 import "./floating-sidebar.css";
 
 const productsNav = [
@@ -38,38 +36,38 @@ const tradingNav = [
   },
 ];
 
-export const SidebarNav = () => {
+export const FloatingSidebarNav = () => {
   return (
-    <ul className="sidebar_nav">
-      <SidebarNavCollapse
+    <ul className="floating-sidebar_nav">
+      <FloatingSidebarNavCollapse
         icon={<TableIcon />}
         label="Products"
         collapseContent={productsNav}
       />
-      <SidebarNavCollapse
+      <FloatingSidebarNavCollapse
         icon={<CurrencyDollarIcon />}
         label="Trading"
         collapseContent={tradingNav}
       />
-      <SidebarNavCollapse
+      <FloatingSidebarNavCollapse
         icon={<HeartIcon />}
         btnLinkUrl="/favorite"
         btnLinkTitle="Favorites"
         label="Favorites"
       />
-      <SidebarNavCollapse
+      <FloatingSidebarNavCollapse
         icon={<BellIcon />}
         btnLinkUrl="/notifications"
         btnLinkTitle="Notifications"
         label="Notifications"
       />
-      <SidebarNavCollapse
+      <FloatingSidebarNavCollapse
         icon={<UserIcon />}
         btnLinkUrl="/profile"
         btnLinkTitle="Profile"
         label="Profile"
       />
-      <SidebarNavCollapse
+      <FloatingSidebarNavCollapse
         icon={<SupportIcon />}
         btnLinkUrl="/support"
         btnLinkTitle="Support"

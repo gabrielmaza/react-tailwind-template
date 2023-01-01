@@ -1,22 +1,22 @@
 import React, { ReactNode } from "react";
 import "./floating-sidebar.css";
 
-interface SidebarSectionProps {
+interface FloatingSidebarSectionProps {
   hrTop?: boolean;
   hrBottom?: boolean;
   children: ReactNode;
 }
 
-export const SidebarSection = ({
+export const FloatingSidebarSection = ({
   hrTop,
   hrBottom,
   children,
-}: SidebarSectionProps) => {
+}: FloatingSidebarSectionProps) => {
   return (
-    <div className="sidebar_section">
-      {hrTop && <hr className="sidebar_section-hr-b" />}
-      <div className="sidebar_section-content">{children}</div>
-      {hrBottom && <hr className="sidebar_section-hr-t" />}
+    <div className="floating-sidebar_section">
+      {hrTop && <hr className="floating-sidebar_section-hr-b" />}
+      <div className="floating-sidebar_section-content">{children}</div>
+      {hrBottom && <hr className="floating-sidebar_section-hr-t" />}
     </div>
   );
 };

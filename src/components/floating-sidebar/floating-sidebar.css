@@ -1,14 +1,19 @@
 @import "../.././assets/styles/main.css";
 
-.sidebar_wrapp {
-  @apply fixed lg:relative w-full max-w-[220px] lg:max-w-full md:max-w-[320px] h-full top-0 left-0 bottom-1 lg:bottom-0 m-3 lg:m-0 z-50 lg:z-0;
+.floating-sidebar_wrapp {
+  @apply fixed w-full max-w-[220px] md:max-w-[320px] h-full top-0 bottom-1 m-3 z-50;
   animation: fadeInLeft 0.3s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal
     forwards;
-
-  .sidebar_content {
-    @apply flex flex-col relative gap-4 w-full h-full overflow-y-auto p-5 rounded-lg bg-white shadow dark:bg-gray-700;
-    .sidebar_mobile-close-btn {
-      @apply block lg:hidden absolute w-auto h-auto right-3 top-3;
+  &.left {
+    @apply left-0;
+  }
+  &.right {
+    @apply right-0;
+  }
+  .floating-sidebar_content {
+    @apply flex flex-col relative gap-4 w-full h-full overflow-y-auto px-5 pt-7 pb-5 rounded-lg bg-white shadow dark:bg-gray-700;
+    .floating-sidebar_mobile-close-btn {
+      @apply block absolute w-auto h-auto right-3 top-3;
       svg {
         @apply w-5 h-5;
         path {
@@ -23,16 +28,16 @@
         }
       }
     }
-    .sidebar_header {
+    .floating-sidebar_header {
       @apply w-full h-auto;
     }
-    .sidebar_nav {
+    .floating-sidebar_nav {
       @apply flex flex-col gap-1;
-      .sidebar_nav-collapse {
+      .floating-sidebar_nav-collapse {
         @apply flex flex-col gap-1 overflow-hidden;
-        .sidebar_nav-collapse-item {
+        .floating-sidebar_nav-collapse-item {
           @apply flex items-center justify-between bg-transparent hover:bg-slate-600 rounded-lg cursor-pointer font-semibold h-10 px-3 select-none z-10 transition-all;
-          .sidebar_nav-collapse-label {
+          .floating-sidebar_nav-collapse-label {
             @apply flex items-center;
             svg {
               @apply w-5 h-5 mr-2;
@@ -40,11 +45,11 @@
                 @apply fill-white;
               }
             }
-            .sidebar_nav-collapse-span {
+            .floating-sidebar_nav-collapse-span {
               @apply text-base ltr:mr-2 rtl:ml-2;
             }
           }
-          .sidebar_nav-collapse-icon {
+          .floating-sidebar_nav-collapse-icon {
             @apply text-lg mt-1;
             svg {
               path {
@@ -53,13 +58,13 @@
             }
           }
         }
-        .sidebar_nav-collapse-content {
+        .floating-sidebar_nav-collapse-content {
           @apply flex flex-col gap-2 ml-5 overflow-hidden;
-          .sidebar_nav-collapse-content-item {
+          .floating-sidebar_nav-collapse-content-item {
             @apply flex items-center bg-transparent hover:bg-slate-600 rounded-lg cursor-pointer font-semibold h-10 px-3 select-none;
-            .sidebar_nav-collapse-content-link {
+            .floating-sidebar_nav-collapse-content-link {
               @apply h-full w-full flex items-center;
-              .sidebar_nav-collapse-content-link-span {
+              .floating-sidebar_nav-collapse-content-link-span {
                 @apply text-base ltr:mr-2 rtl:ml-2;
               }
             }
@@ -70,7 +75,7 @@
             normal;
         }
       }
-      .sidebar_nav-btn-link {
+      .floating-sidebar_nav-btn-link {
         @apply flex items-center bg-transparent hover:bg-slate-600 rounded-lg cursor-pointer font-semibold h-10 px-3 select-none transition-all;
         svg {
           @apply w-5 h-5 mr-2;
@@ -80,18 +85,21 @@
         }
       }
     }
-    .sidebar_section {
+    .floating-sidebar_section {
       @apply m-0 p-0;
-      .sidebar_section-content {
+      .floating-sidebar_section-content {
         @apply flex flex-col gap-3 py-2;
       }
-      .sidebar_section-hr-b,
-      .sidebar_section-hr-t {
+      .floating-sidebar_section-hr-b,
+      .floating-sidebar_section-hr-t {
         @apply border-t border-gray-200 dark:border-gray-600;
       }
     }
+    .floating-sidebar_title {
+      @apply text-xl font-semibold;
+    }
   }
 }
-.custom-sidebar-overlay {
-  @apply block lg:hidden fixed w-full h-screen z-30 top-0 left-0 bg-[#272838de] transition-all;
+.floating-custom-sidebar-overlay {
+  @apply block fixed w-full h-screen z-30 top-0 left-0 bg-[#272838de] transition-all;
 }

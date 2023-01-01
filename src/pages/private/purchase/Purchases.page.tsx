@@ -16,26 +16,7 @@ import PageTitle from "../../../components/page-title/PageTitle";
 const Purchases = () => {
   return (
     <>
-      <div className="layout-sidebar flex flex-auto flex-col">
-        <div className="flex flex-auto min-w-0">
-          <div
-            className="side-nav side-nav-transparent side-nav-expand"
-            style={{ width: "290px", minWidth: "290px" }}
-          >
-            {/* <div className="side-nav-header">
-              <div className="logo px-6" style={{ width: "auto" }}>
-                <span
-                  className=""
-                  style={{ fontSize: "40px", height: "auto", maxWidth: "100%" }}
-                >
-                  Brand.
-                </span>
-              </div>
-            </div> */}
-          </div>
-        </div>
-      </div>
-      <Navbar />
+      <Navbar navbarMenu navbarUserAvatar />
       <div className="py-6 px-4 flex flex-col gap-6 container-100vh-180">
         <div className="flex flex-col-reverse gap-6 lg:flex-row">
           <div className="main-container">

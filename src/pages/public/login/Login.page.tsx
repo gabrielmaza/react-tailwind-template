@@ -9,7 +9,7 @@ import PageTitle from "../../../components/page-title/PageTitle";
 const Login = () => {
   return (
     <>
-      <Navbar />
+      <Navbar navbarLogBtn />
       <div className="py-20 px-4 flex flex-col gap-6 container-100vh-180">
         <div className="flex flex-col-reverse gap-6 lg:flex-row">
           <div className="w-full max-w-lg mx-auto flex flex-col gap-6">
@@ -19,21 +19,13 @@ const Login = () => {
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                   Your email
                 </label>
-                <InputText
-                  type="email"
-                  id="email-input"
-                  placeholder="name@reactmarket.com"
-                />
+                <InputText type="email" placeholder="name@reactmarket.com" />
               </div>
               <div className="mb-6">
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                   Your password
                 </label>
-                <InputText
-                  type="password"
-                  id="password"
-                  placeholder="Password"
-                />
+                <InputText type="password" placeholder="Password" />
                 {/* <input
                   type="password"
                   id="password"

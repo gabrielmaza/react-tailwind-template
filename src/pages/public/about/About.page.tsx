@@ -8,7 +8,7 @@ import "./about.css";
 const About = () => {
   return (
     <>
-      <Navbar />
+      <Navbar navbarLogBtn />
       <div className="about-wrapp">
         <div className="about-wrapp_main-section">
           <div className="w-full h-full flex items-center">

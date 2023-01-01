@@ -1,10 +1,7 @@
-import { UploadIcon } from "@heroicons/react/solid";
 import React from "react";
 import BreadCrumb from "../../../components/breadcrumb/BreadCrumb";
-import Button from "../../../components/button/Button";
 import ButtonLink from "../../../components/button/ButtonLink";
 import Footer from "../../../components/footer/Footer";
-import InputCheckbox from "../../../components/inputs/checkbox/InputCheckbox";
 import Dropdown from "../../../components/inputs/dropdown/InputDropdown";
 import InputFile from "../../../components/inputs/file/InputFile";
 import InputTextarea from "../../../components/inputs/text-area/InputTextarea";
@@ -15,7 +12,7 @@ import PageTitle from "../../../components/page-title/PageTitle";
 const NewProductForm = () => {
   return (
     <>
-      <Navbar />
+      <Navbar navbarMenu navbarUserAvatar />
       <div className="py-6 px-4 flex flex-col gap-6 container-100vh-180">
         <div className="flex flex-col-reverse gap-6 lg:flex-row">
           <div className="main-container">

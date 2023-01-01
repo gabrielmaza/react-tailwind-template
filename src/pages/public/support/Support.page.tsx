@@ -9,7 +9,7 @@ import PageTitle from "../../../components/page-title/PageTitle";
 const Support = () => {
   return (
     <>
-      <Navbar />
+      <Navbar navbarLogBtn />
       <div className="py-6 px-4 flex flex-col gap-6 container-100vh-180">
         <div className="flex flex-col-reverse gap-6 lg:flex-row">
           <div className="main-container">

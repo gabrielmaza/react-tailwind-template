@@ -1,10 +1,12 @@
 import React, { ReactNode } from "react";
 import "./floating-sidebar.css";
 
-interface SidebarContentProps {
+interface FloatingSidebarContentProps {
   children: ReactNode;
 }
 
-export const SidebarContent = ({ children }: SidebarContentProps) => {
-  return <div className="sidebar_content">{children}</div>;
+export const FloatingSidebarContent = ({
+  children,
+}: FloatingSidebarContentProps) => {
+  return <div className="floating-sidebar_content">{children}</div>;
 };

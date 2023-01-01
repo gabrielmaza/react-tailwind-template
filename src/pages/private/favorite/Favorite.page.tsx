@@ -8,7 +8,7 @@ import ProductCardListColumn from "../../../components/cards/ProductCardListColu
 const Favorite = () => {
   return (
     <>
-      <Navbar />
+      <Navbar navbarMenu navbarUserAvatar />
       <div className="py-5 px-4 flex flex-col gap-6 container-100vh-180">
         <div className="flex flex-col gap-6 lg:flex-row">
           <div className="main-container">
