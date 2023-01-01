@@ -1,1 +1,16 @@
 @import "../.././assets/styles/main.css";
+.product-det-sidebar_wrapp {
+  @apply flex flex-col gap-4;
+  .product-det-sidebar_section {
+    @apply w-full relative;
+    .product-det-sidebar_close-btn {
+      @apply absolute w-auto h-auto top-0 right-0;
+    }
+    .product-det-sidebar_heading-wrapp {
+      @apply flex items-center gap-2 mb-4;
+    }
+    .product-det-sidebar_purchase-form {
+      @apply w-full rounded-lg text-gray-700;
+    }
+  }
+}

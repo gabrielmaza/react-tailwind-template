@@ -10,6 +10,7 @@ import BestSellersList from "../../../components/best-sellers-list/BestSellersLi
 import SubscribeBanner from "../../../components/subscribe-banner/SubscribeBanner";
 import ProductDetailSidebar from "../../../components/product-detail-sidebar/ProductDetailSidebar";
 import ProductDetail2 from "../../../components/product-detail/ProductDetail2";
+import ProductDetail1 from "../../../components/product-detail/ProductDetail1";
 
 const Product = () => {
   // Modal actions

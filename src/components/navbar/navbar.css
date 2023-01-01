@@ -1,12 +1,23 @@
 @import "../.././assets/styles/main.css";
 .main-navbar {
-  @apply w-full max-w-screen-2xl mx-auto h-[60px] md:h-[80px] relative;
+  @apply relative w-full max-w-screen-2xl mx-auto h-[60px] md:h-[80px] border-b border-slate-400;
   background-color: rgba(15, 23, 42, 0.3);
-  border-bottom: 1px solid rgb(71 85 105);
   .fade-in-top {
     transform: translateY(-100%);
     animation: fadeInTop 2s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal
       forwards;
+  }
+  .navbar-menu_wrapp {
+    @apply hidden md:flex gap-2 text-white;
+    .navbar-menu_link {
+      @apply block relative px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700 transition-all;
+      svg {
+        @apply mx-1 h-5;
+        path {
+          @apply fill-slate-800 dark:fill-white;
+        }
+      }
+    }
   }
   .mobile-main-menu {
     @apply relative rounded-b-xl bg-slate-700 w-full px-4 py-3 transition-all z-50;

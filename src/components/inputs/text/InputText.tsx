@@ -1,32 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import ".././inputs.css";
 
 interface InputTextProps {
   type?: string;
-  id?: any;
-  name?: string;
   value?: any;
   placeholder?: string;
   required?: boolean;
-  autoComplete?: boolean;
   customClass?: string;
-  register?: any;
-  onChange?: any;
 }
 
 const InputText = ({
   type = "text",
-  id,
-  name,
-  value,
-  placeholder,
+  value = "inputValue",
+  placeholder = "Placeholder...",
   required = false,
-  autoComplete = false,
   customClass,
-  register,
-  onChange,
 }: InputTextProps) => {
-  return <input className={`input ${customClass}`} />;
+  const [inputValue, setinputValue] = useState("");
+
+  const onInputChange = ({ target }) => {
+    setinputValue(target.value);
+  };
+
+  return (
+    <input
+      type={type}
+      placeholder={placeholder}
+      value={inputValue}
+      onChange={onInputChange}
+      className={`input ${customClass}`}
+      {...(required && { required })}
+    />
+  );
 };
 
 export default InputText;

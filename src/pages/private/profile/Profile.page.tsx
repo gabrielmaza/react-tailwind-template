@@ -11,7 +11,7 @@ import Tabs from "../../../components/tabs/Tabs";
 const Profile = () => {
   return (
     <>
-      <Navbar />
+      <Navbar navbarMenu navbarUserAvatar />
       <div className="py-6 px-4 flex flex-col gap-6 container-100vh-180">
         <div className="flex flex-col-reverse gap-6 lg:flex-row">
           <div className="main-container">
@@ -26,7 +26,6 @@ const Profile = () => {
                   <div className="flex flex-col gap-3 max-w-xl">
                     <h2 className="text-md font-bold">User</h2>
                     <InputText
-                      id="user-name"
                       value="Nombre de usuario"
                       placeholder="Nombre de usuario..."
                     />
@@ -35,7 +34,6 @@ const Profile = () => {
                     <h2 className="text-md font-bold">Email</h2>
                     <InputText
                       type="email"
-                      id="user-email"
                       value="Email"
                       placeholder="Email..."
                     />
@@ -44,7 +42,6 @@ const Profile = () => {
                     <h2 className="text-md font-bold">Password</h2>
                     <InputText
                       type="password"
-                      id="user-password"
                       value="1234578"
                       placeholder="Contraseña..."
                       required
@@ -52,42 +49,17 @@ const Profile = () => {
                   </div>
                   <div className="flex flex-col gap-3 max-w-xl">
                     <h2 className="text-md font-bold">Address</h2>
-                    <InputText
-                      id="user-country"
-                      value="Country"
-                      placeholder="Country.."
-                    />
-                    <InputText
-                      id="user-state"
-                      value="State"
-                      placeholder="State.."
-                    />
-                    <InputText
-                      id="user-city"
-                      value="City"
-                      placeholder="City.."
-                    />
-                    <InputText
-                      id="user-city-cp"
-                      value="123456"
-                      placeholder="Postal code.."
-                    />
-                    <InputText
-                      id="user-street"
-                      value="Street"
-                      placeholder="Street.."
-                    />
+                    <InputText value="Country" placeholder="Country.." />
+                    <InputText value="State" placeholder="State.." />
+                    <InputText value="City" placeholder="City.." />
+                    <InputText value="123456" placeholder="Postal code.." />
+                    <InputText value="Street" placeholder="Street.." />
                     <div className="flex gap-3">
                       <div className="w-1/2">
-                        <InputText
-                          id="user-street-number"
-                          value="12345"
-                          placeholder="Number.."
-                        />
+                        <InputText value="12345" placeholder="Number.." />
                       </div>
                       <div className="w-1/2">
                         <InputText
-                          id="user-street-floor"
                           value="4"
                           placeholder="Floor / Appartment.."
                         />
@@ -116,54 +88,29 @@ const Profile = () => {
                     </label>
                     <InputText value="Cuit" placeholder="Cuit.." />
                     <label className="text-md font-semibold">Address</label>
-                    <InputText
-                      id="user-country"
-                      value=""
-                      placeholder="País.."
-                    />
+                    <InputText value="" placeholder="País.." />
                     <div className="flex gap-3">
                       <div className="w-1/2">
-                        <InputText
-                          id="user-state"
-                          value=""
-                          placeholder="Provincia.."
-                        />
+                        <InputText value="" placeholder="Provincia.." />
                       </div>
                       <div className="w-1/2">
-                        <InputText
-                          id="user-city"
-                          value=""
-                          placeholder="Localidad.."
-                        />
+                        <InputText value="" placeholder="Localidad.." />
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <div className="w-1/2">
-                        <InputText
-                          id="user-city-cp"
-                          value=""
-                          placeholder="Código postal.."
-                        />
+                        <InputText value="" placeholder="Código postal.." />
                       </div>
                       <div className="w-1/2">
-                        <InputText
-                          id="user-street"
-                          value=""
-                          placeholder="Calle.."
-                        />
+                        <InputText value="" placeholder="Calle.." />
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <div className="w-1/2">
-                        <InputText
-                          id="user-street-number"
-                          value=""
-                          placeholder="Número.."
-                        />
+                        <InputText value="" placeholder="Número.." />
                       </div>
                       <div className="w-1/2">
                         <InputText
-                          id="user-street-floor"
                           value=""
                           placeholder="Piso / Departamento.."
                         />
@@ -184,30 +131,20 @@ const Profile = () => {
                     <div className="flex gap-3">
                       <div className="w-1/2">
                         <InputText
-                          id="card-number"
                           value="4444 4444 5555 5555"
                           placeholder="Número..."
                         />
                       </div>
                       <div className="w-1/2">
-                        <InputText
-                          id="card-name"
-                          value="Card Name"
-                          placeholder="Nombre..."
-                        />
+                        <InputText value="Card Name" placeholder="Nombre..." />
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <div className="w-1/2">
-                        <InputText
-                          id="card-exp-date"
-                          value="13/28"
-                          placeholder="Vencimiento..."
-                        />
+                        <InputText value="13/28" placeholder="Vencimiento..." />
                       </div>
                       <div className="w-1/2">
                         <InputText
-                          id="card-csv"
                           value="123"
                           placeholder="csv..."
                           type="password"
@@ -226,30 +163,20 @@ const Profile = () => {
                     <div className="flex gap-3">
                       <div className="w-1/2">
                         <InputText
-                          id="card-number"
                           value="4444 4444 5555 5555"
                           placeholder="Número..."
                         />
                       </div>
                       <div className="w-1/2">
-                        <InputText
-                          id="card-name"
-                          value="Card Name"
-                          placeholder="Nombre..."
-                        />
+                        <InputText value="Card Name" placeholder="Nombre..." />
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <div className="w-1/2">
-                        <InputText
-                          id="card-exp-date"
-                          value="13/28"
-                          placeholder="Vencimiento..."
-                        />
+                        <InputText value="13/28" placeholder="Vencimiento..." />
                       </div>
                       <div className="w-1/2">
                         <InputText
-                          id="card-csv"
                           value="123"
                           placeholder="csv..."
                           type="password"
@@ -276,54 +203,29 @@ const Profile = () => {
                     </label>
                     <InputText value="Cuit" placeholder="Cuit.." />
                     <label className="text-md font-semibold">Address</label>
-                    <InputText
-                      id="user-country"
-                      value=""
-                      placeholder="País.."
-                    />
+                    <InputText value="" placeholder="País.." />
                     <div className="flex gap-3">
                       <div className="w-1/2">
-                        <InputText
-                          id="user-state"
-                          value=""
-                          placeholder="Provincia.."
-                        />
+                        <InputText value="" placeholder="Provincia.." />
                       </div>
                       <div className="w-1/2">
-                        <InputText
-                          id="user-city"
-                          value=""
-                          placeholder="Localidad.."
-                        />
+                        <InputText value="" placeholder="Localidad.." />
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <div className="w-1/2">
-                        <InputText
-                          id="user-city-cp"
-                          value=""
-                          placeholder="Código postal.."
-                        />
+                        <InputText value="" placeholder="Código postal.." />
                       </div>
                       <div className="w-1/2">
-                        <InputText
-                          id="user-street"
-                          value=""
-                          placeholder="Calle.."
-                        />
+                        <InputText value="" placeholder="Calle.." />
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <div className="w-1/2">
-                        <InputText
-                          id="user-street-number"
-                          value=""
-                          placeholder="Número.."
-                        />
+                        <InputText value="" placeholder="Número.." />
                       </div>
                       <div className="w-1/2">
                         <InputText
-                          id="user-street-floor"
                           value=""
                           placeholder="Piso / Departamento.."
                         />
@@ -358,30 +260,20 @@ const Profile = () => {
                     <div className="flex gap-3">
                       <div className="w-1/2">
                         <InputText
-                          id="card-number"
                           value="4444 4444 5555 5555"
                           placeholder="Número..."
                         />
                       </div>
                       <div className="w-1/2">
-                        <InputText
-                          id="card-name"
-                          value="Card Name"
-                          placeholder="Nombre..."
-                        />
+                        <InputText value="Card Name" placeholder="Nombre..." />
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <div className="w-1/2">
-                        <InputText
-                          id="card-exp-date"
-                          value="13/28"
-                          placeholder="Vencimiento..."
-                        />
+                        <InputText value="13/28" placeholder="Vencimiento..." />
                       </div>
                       <div className="w-1/2">
                         <InputText
-                          id="card-csv"
                           value="123"
                           placeholder="csv..."
                           type="password"

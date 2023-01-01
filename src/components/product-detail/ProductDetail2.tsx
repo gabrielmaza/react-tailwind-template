@@ -72,7 +72,7 @@ const ProductDetail2 = () => {
             <Button
               type="submit"
               color="green"
-              label="Download"
+              label="Buy"
               customClass="p-3 w-full max-w-lg mb-2"
             />
           </div>

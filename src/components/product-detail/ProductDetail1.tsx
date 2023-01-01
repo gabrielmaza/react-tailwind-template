@@ -6,7 +6,7 @@ import ProductDetailCarousel from "../carousel/ProductDetailCarousel";
 
 const ProductDetail1 = () => {
   return (
-    <div className="w-full lg:w-4/6 max-w-full flex flex-col gap-6">
+    <div className="w-full lg:w-full max-w-full flex flex-col gap-6">
       <div className="flex flex-col sm:flex-row gap-4">
         <ProductDetailCarousel
           width="w-full sm:w-[240px] md:w-80"

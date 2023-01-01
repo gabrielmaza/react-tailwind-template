@@ -41,7 +41,7 @@ const CommentsSection = () => {
                   regarding how to best measu.
                 </div>
                 <div className="text-sm font-normal text-gray-500 lex dark:text-gray-300">
-                  Respuesta
+                  Reply
                 </div>
                 <div className="p-3 text-xs italic font-normal text-gray-500 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300">
                   Hi ya'll! I wanted to share a webinar zeroheight is having
@@ -66,7 +66,7 @@ const CommentsSection = () => {
                   regarding how to best measure your.
                 </div>
                 <div className="text-sm font-normal text-gray-500 lex dark:text-gray-300">
-                  Esperando respuesta...
+                  Waiting answer...
                 </div>
               </div>
             </div>

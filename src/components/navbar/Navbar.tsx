@@ -20,8 +20,29 @@ import ButtonLink from "../button/ButtonLink";
 import Button from "../button/Button";
 import useClickAwayDiv from "../../hooks/useClickAwayDiv";
 import { BrandLogo } from "../brand-logo/BrandLogo";
+import { NavbarMenu } from "./NavbarMenu";
+import { NavbarLogBtn } from "./NavbarLogBtn";
+import { NavbarUserAvatar } from "./NavbarUserAvatar";
+import FLoatingSidebar from "../floating-sidebar/FLoatingSidebar";
 
-const Navbar = () => {
+interface NavbarProps {
+  navbarMenu?: boolean;
+  navbarLogBtn?: boolean;
+  navbarUserAvatar?: boolean;
+}
+
+const Navbar = ({
+  navbarMenu = false,
+  navbarLogBtn = false,
+  navbarUserAvatar = false,
+}: NavbarProps) => {
+  // Floating Sidebar
+  const [toggFloatingSidebar, setToggFloatingSidebar] = useState(false);
+  const handleToggFloatingSidebar = () => {
+    setToggFloatingSidebar(!toggFloatingSidebar);
+  };
+
+  // Mobile menu
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   const close = () => setNav(false);
@@ -31,69 +52,16 @@ const Navbar = () => {
     <div ref={divRef} className="main-navbar">
       <div className="px-3 flex justify-between items-center w-full h-full fade-in-top">
         <div className="flex items-center">
-          <h1 className="text-white text-3xl font-bold mr-4 sm:text-4xl">
+          <div className="mx-2">
             <Link to="/" title="Logo enlace">
               <BrandLogo />
             </Link>
-          </h1>
-          <ul className="hidden md:flex text-white">
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
-              <Link to="/new-product-form" title="Sell product">
-                <PlusCircleIcon className="mx-2 h-5" />
-              </Link>
-            </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
-              <Link to="/purchases" title="My purchases">
-                <SortDescendingIcon className="mx-2 h-5" />
-              </Link>
-            </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
-              <Link to="/sales" title="My sales">
-                <SortAscendingIcon className="mx-2 h-5" />
-              </Link>
-            </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
-              <Link to="/my-products" title="My products">
-                <DesktopComputerIcon className="mx-2 h-5" />
-              </Link>
-            </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
-              <Link to="/support" title="Support">
-                <SupportIcon className="mx-2 h-5" />
-              </Link>
-            </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
-              <Link to="/profile" title="Profile">
-                <UserIcon className="mx-2 h-5" />
-              </Link>
-            </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
-              <Link to="/favorite" title="Favorites">
-                <HeartIcon className="mx-2 h-5" />
-              </Link>
-            </li>
-            <li className="mx-2 px-2 pt-3 pb-3 rounded-lg hover:bg-slate-700 cursor-pointer focus:bg-slate-700">
-              <Link to="/notifications" title="Notifications">
-                <BellIcon className="mx-2 h-5" />
-              </Link>
-            </li>
-          </ul>
+          </div>
         </div>
         <div className="hidden md:flex md:items-center gap-4">
-          <ButtonLink
-            label="Log in"
-            title="Log in"
-            color="transparent"
-            url="/login"
-            customClass="py-3 px-4"
-          />
-          <ButtonLink
-            label="Sign in"
-            title="Sign in"
-            color="transparent-bordered"
-            url="/register-form"
-            customClass="py-3 px-4"
-          />
+          {navbarMenu && <NavbarMenu />}
+          {navbarLogBtn && <NavbarLogBtn />}
+          {navbarUserAvatar && <NavbarUserAvatar />}
         </div>
         <div className="md:hidden" onClick={handleClick}>
           {!nav ? (
@@ -190,6 +158,10 @@ const Navbar = () => {
           />
         </div>
       </ul>
+      <FLoatingSidebar
+        toggleSidebar={toggFloatingSidebar}
+        handleClick={handleToggFloatingSidebar}
+      />
     </div>
   );
 };

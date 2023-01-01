@@ -26,7 +26,7 @@ const Dropdown = ({ label, icon, children }: DropdownProps) => {
       </button>
       {/* Dropdown menu */}
       <div
-        className={`absolute z-10 w-44 max-h-[300px] overflow-y-auto mt-2 bg-white rounded-lg divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 ${
+        className={`absolute z-10 w-44 max-h-[300px] overflow-y-auto mt-2 bg-white rounded-lg divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 border border-gray-600 dark:border-gray-500 ${
           !show && "hidden"
         }`}
       >

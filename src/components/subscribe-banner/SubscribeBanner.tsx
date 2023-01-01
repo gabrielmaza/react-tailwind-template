@@ -13,11 +13,11 @@ const SubscribeBanner = () => {
       />
       <div className="flex flex-col justify-between p-4 leading-normal">
         <h5 className="mb-2 text-lg md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Subscríbete a nuestro newsletter
+          Subscribe to our newsletter
         </h5>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          Se el primero en enterarte de los mejores productos y ofertas
-          publicados en internet.
+          Be the first to find out about the best products and offers published
+          on the internet.
         </p>
       </div>
     </a>

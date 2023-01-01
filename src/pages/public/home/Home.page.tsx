@@ -40,7 +40,7 @@ const Home = () => {
         <Spinner3 />
       ) : (
         <>
-          <Navbar />
+          <Navbar navbarLogBtn />
           <LayoutSimpleSliderHome>
             <Carousel
               width="w-auto"
