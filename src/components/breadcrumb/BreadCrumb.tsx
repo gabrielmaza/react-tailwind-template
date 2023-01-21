@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const BreadCrumb = () => {
+  const { t, i18n } = useTranslation("global");
   return (
     <nav className="flex px-3 py-1 rounded-lg text-gray-700 border border-gray-200 bg--transparent dark:bg-transparent dark:border-gray-700">
       <ol className="inline-flex items-center flex-wrap space-x-1 md:space-x-3">
@@ -18,7 +20,7 @@ const BreadCrumb = () => {
             >
               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
             </svg>
-            Home
+            {t("breadcrumb.home")}
           </Link>
         </li>
         <li className="inline-flex items-center p-0">

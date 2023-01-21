@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import "./modal.css";
-import useClickAwayDiv from "../../hooks/useClickAwayDiv";
 
 interface MyModalProps {
   show: boolean;
@@ -8,19 +7,14 @@ interface MyModalProps {
   children: ReactNode;
 }
 
-const MyModal = ({ show, closeFunction, children }: MyModalProps) => {
-  const [divRef] = useClickAwayDiv<HTMLDivElement>(closeFunction);
-
+const MyModal = ({ show, children }: MyModalProps) => {
   return (
     <>
       {/* Main modal */}
       <div className={`custom-modal ${show ? "active" : ""}`}>
         <div className="relative p-4 w-full max-w-2xl h-full md:h-auto">
           {/* Modal content */}
-          <div
-            ref={divRef}
-            className="relative bg-white rounded-lg shadow dark:bg-gray-700"
-          >
+          <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
             {children}
           </div>
         </div>

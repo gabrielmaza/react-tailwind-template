@@ -6,7 +6,7 @@ interface LinkButtonProps {
   label: string;
   title: string;
   icon?: any;
-  url: string;
+  url?: string;
   color?:
     | "purple"
     | "pink"
@@ -21,7 +21,7 @@ const ButtonLink = ({
   label,
   customClass,
   icon,
-  url,
+  url = "#",
   color = "purple",
   title,
 }: LinkButtonProps) => {

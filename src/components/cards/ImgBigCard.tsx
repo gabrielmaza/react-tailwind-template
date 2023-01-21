@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import Button from "../button/Button";
 import ButtonLink from "../button/ButtonLink";
 
-interface ProductCard1Props {
+interface ImgBigCardProps {
   img: string;
   title: string;
   subTitle: string;
@@ -25,14 +25,14 @@ interface ProductCard1Props {
   moreBtn?: boolean;
   commentsBtn?: boolean;
   salesBtn?: boolean;
-  date?: boolean;
+  date?: any;
 }
 
-const ProductCard1 = ({
+const ImgBigCard = ({
   img,
   title,
   subTitle,
-  price = "?",
+  price = "00,00",
   url,
   favoriteBtn = false,
   deleteBtn = false,
@@ -42,7 +42,7 @@ const ProductCard1 = ({
   commentsBtn = false,
   salesBtn = false,
   date = false,
-}: ProductCard1Props) => {
+}: ImgBigCardProps) => {
   return (
     <div className="product-card flex flex-col sm:flex-row w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
       <Link to="/product" title={title}>
@@ -54,53 +54,43 @@ const ProductCard1 = ({
       </Link>
       <div className="product-card_body-wrapp p-3 relative w-full">
         <div className="w-full flex justify-beteen gap-1">
-          {date ? (
+          {date && (
             <div className="w-full m-2 flex gap-1">
-              <span className="text-sm">02 Jul</span>
+              <span className="text-sm">{date}</span>
             </div>
-          ) : (
-            ""
           )}
           <div className="w-full flex justify-end gap-1">
-            {favoriteBtn ? (
+            {favoriteBtn && (
               <Button
                 color="transparent"
                 type="submit"
                 icon={<HeartIcon className="h-5" />}
                 customClass="w-fit m-0"
               />
-            ) : (
-              ""
             )}
-            {pauseBtn ? (
+            {pauseBtn && (
               <Button
                 color="transparent"
                 type="submit"
                 icon={<PauseIcon className="h-5" />}
                 customClass="w-fit m-0"
               />
-            ) : (
-              ""
             )}
-            {deleteBtn ? (
+            {deleteBtn && (
               <Button
                 color="transparent"
                 type="submit"
                 icon={<TrashIcon className="h-5" />}
                 customClass="w-fit m-0"
               />
-            ) : (
-              ""
             )}
-            {updateBtn ? (
+            {updateBtn && (
               <Button
                 color="transparent"
                 type="submit"
                 icon={<PencilIcon className="h-5" />}
                 customClass="w-fit m-0"
               />
-            ) : (
-              ""
             )}
           </div>
         </div>
@@ -118,7 +108,7 @@ const ProductCard1 = ({
         <div className="w-full flex justify-between items-end gap-5 flex-wrap">
           <span className="text-3xl font-bold">${price}</span>
           <div className="flex justify-end gap-1 flex-wrap">
-            {commentsBtn ? (
+            {commentsBtn && (
               <ButtonLink
                 label="234"
                 url="#"
@@ -127,10 +117,8 @@ const ProductCard1 = ({
                 title="Comments"
                 customClass="bottom-0"
               />
-            ) : (
-              ""
             )}
-            {salesBtn ? (
+            {salesBtn && (
               <ButtonLink
                 label="837"
                 url="#"
@@ -139,10 +127,8 @@ const ProductCard1 = ({
                 title="Sales"
                 customClass="bottom-0"
               />
-            ) : (
-              ""
             )}
-            {moreBtn ? (
+            {moreBtn && (
               <ButtonLink
                 label="See more"
                 url={title}
@@ -151,8 +137,6 @@ const ProductCard1 = ({
                 title="See more"
                 customClass="bottom-0"
               />
-            ) : (
-              ""
             )}
           </div>
         </div>
@@ -161,4 +145,4 @@ const ProductCard1 = ({
   );
 };
 
-export default ProductCard1;
+export default ImgBigCard;

@@ -19,7 +19,7 @@
 .main-carrusel {
   @apply relative;
   .main-carrusel_img-wrapp {
-    @apply duration-700 ease-in-out transition-all;
+    @apply text-center duration-700 ease-in-out transition-all;
     &::before {
       content: "";
       background: -webkit-linear-gradient(

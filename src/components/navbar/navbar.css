@@ -2,11 +2,6 @@
 .main-navbar {
   @apply relative w-full max-w-screen-2xl mx-auto h-[60px] md:h-[80px] border-b border-slate-400;
   background-color: rgba(15, 23, 42, 0.3);
-  .fade-in-top {
-    transform: translateY(-100%);
-    animation: fadeInTop 2s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal
-      forwards;
-  }
   .navbar-menu_wrapp {
     @apply hidden md:flex gap-2 text-white;
     .navbar-menu_link {
@@ -18,9 +13,5 @@
         }
       }
     }
-  }
-  .mobile-main-menu {
-    @apply relative rounded-b-xl bg-slate-700 w-full px-4 py-3 transition-all z-50;
-    animation: fadeInTop 0.3s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal;
   }
 }

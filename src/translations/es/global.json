@@ -1,0 +1,21 @@
+{
+  "component": {
+    "header": {
+      "hello-world": "Hola mundo",
+      "login-label": "Ingresar",
+      "sign-in-label": "Crear cuenta"
+    },
+    "breadcrumb": {
+      "home": "Inicio"
+    }
+  },
+  "page": {
+    "home": {
+      "title-latest": "Lo último"
+    },
+    "comments": {
+      "tab-nav-title-1": "Mis comentarios",
+      "tab-nav-title-2": "De usuarios"
+    }
+  }
+}

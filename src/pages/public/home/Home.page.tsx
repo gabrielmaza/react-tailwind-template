@@ -2,14 +2,16 @@ import React, { useEffect, useState } from "react";
 import Footer from "../../../components/footer/Footer";
 import InputSearch from "../../../components/inputs/search/InputSearch";
 import Navbar from "../../../components/navbar/Navbar";
+import Alert from "../../../components/alert/Alert";
 import PageTitle from "../../../components/page-title/PageTitle";
 import Paginator from "../../../components/paginator/Paginator";
 import Sidebar from "../../../components/sidebar/sidebar";
 import Carousel from "../../../components/carousel/Carousel";
-import FullImgCardList from "../../../components/cards/FullImgCardList";
+import ImgMasonryCardList from "../../../components/card-list/ImgMasonryCardList";
 import Spinner3 from "../../../components/spinner-animation/Spinner3";
-import { LayoutSimpleSliderHome } from "../../../components/layouts/LayoutSimpleSliderHome";
 import { SidebarToggleBtn } from "../../../components/sidebar/SidebarToggleBtn";
+import { LayoutSimpleSlider } from "../../../components/layouts/LayoutSimpleSlider";
+import { useTranslation } from "react-i18next";
 
 const featureProducts = [
   "./src/assets/img/products/image-1.jpg",
@@ -18,6 +20,8 @@ const featureProducts = [
 ];
 
 const Home = () => {
+  const { t, i18n } = useTranslation("global");
+
   const [toggleSidebar, setToggleSidebar] = useState(false);
 
   const handleToggleSidebar = () => {
@@ -40,8 +44,8 @@ const Home = () => {
         <Spinner3 />
       ) : (
         <>
-          <Navbar navbarLogBtn />
-          <LayoutSimpleSliderHome>
+          <Navbar navbarLogBtn mobSidebPubContent navbarLangSwitcher />
+          <LayoutSimpleSlider>
             <Carousel
               width="w-auto"
               height="h-56 md:h-96"
@@ -69,12 +73,12 @@ const Home = () => {
                     <InputSearch />
                   </div>
                   <PageTitle label="Latest" />
-                  <FullImgCardList favoriteBtn moreBtn salesBtn />
+                  <ImgMasonryCardList favoriteBtn moreBtn salesBtn />
                   <Paginator />
                 </div>
               </div>
             </div>
-          </LayoutSimpleSliderHome>
+          </LayoutSimpleSlider>
           <Footer />
         </>
       )}

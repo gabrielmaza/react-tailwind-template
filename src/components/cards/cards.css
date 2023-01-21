@@ -9,25 +9,17 @@
   }
 }
 
-.product-card-list {
-  @apply flex flex-col gap-4;
-}
-
-.product-sm-card-list {
-  @apply flex gap-3 overflow-x-auto p-4 scroll-smooth;
-}
-
-.full-img-card-list {
-  @apply relative;
-  columns: 3 260px;
-  .full-img-card {
-    @apply relative mb-4 inline-block w-full h-auto rounded-lg;
-  }
-}
-
-.product-sm-card_item {
+.sm-card_item {
   @apply w-1/3 min-w-[260px] bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700;
-  img {
-    @apply w-full h-[200px] object-cover;
+  .sm-card_item-link {
+    @apply block w-auto h-auto overflow-hidden rounded-t-xl;
+    &:hover {
+      img {
+        transform: scale(105%);
+      }
+    }
+    img {
+      @apply w-full h-[200px] object-cover transition-all;
+    }
   }
 }

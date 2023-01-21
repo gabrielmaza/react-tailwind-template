@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import AccordionSupport from "../../../components/accordion/AccordionSupport";
+import Accordion from "../../../components/accordion/Accordion";
+import { AccordionItem } from "../../../components/accordion/AccordionItem";
 import BreadCrumb from "../../../components/breadcrumb/BreadCrumb";
 import Footer from "../../../components/footer/Footer";
 import Navbar from "../../../components/navbar/Navbar";
@@ -16,8 +17,30 @@ const Support = () => {
             <BreadCrumb />
             <div className="flex flex-col gap-6">
               <PageTitle label="Support" />
-              {/* Accordion */}
-              <AccordionSupport />
+              <Accordion>
+                <AccordionItem title="How to publish?" open>
+                  <p className="mb-2 text-gray-500 dark:text-gray-300">
+                    To post on our website, you must create an account on the{" "}
+                    <Link to="/register-form">Register page</Link> and validate
+                    your email.
+                  </p>
+                </AccordionItem>
+                <AccordionItem title="How to buy?">
+                  <p className="mb-2 text-gray-500 dark:text-gray-300">
+                    To buy on our website you must create an account in the{" "}
+                    <Link to="/register-form">Register page.</Link> Then go to a
+                    product page and Click the "Buy" button.
+                  </p>
+                </AccordionItem>
+                <AccordionItem title="How to report?">
+                  <p className="mb-2 text-gray-500 dark:text-gray-300">
+                    To report a product, purchase or user you must send us a
+                    message from the <Link to="/contact">Contact page</Link>{" "}
+                    with the name, id, or SKU of the product, purchase code or
+                    name of the username/email you want to report.
+                  </p>
+                </AccordionItem>
+              </Accordion>
               <h2 className="mb-2 pr-8 text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Contact channels
               </h2>

@@ -2,16 +2,19 @@
 
 .floating-sidebar_wrapp {
   @apply fixed w-full max-w-[220px] md:max-w-[320px] h-full top-0 bottom-1 m-3 z-50;
-  animation: fadeInLeft 0.3s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal
-    forwards;
+  height: calc(100% - 1.5rem);
   &.left {
     @apply left-0;
+    animation: fadeInLeft 0.3s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal
+      forwards;
   }
   &.right {
     @apply right-0;
+    animation: fadeInRight 0.3s cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal
+      forwards;
   }
   .floating-sidebar_content {
-    @apply flex flex-col relative gap-4 w-full h-full overflow-y-auto px-5 pt-7 pb-5 rounded-lg bg-white shadow dark:bg-gray-700;
+    @apply flex flex-col relative w-full h-full overflow-y-auto px-5 pt-7 pb-5 rounded-lg bg-white shadow dark:bg-gray-700;
     .floating-sidebar_mobile-close-btn {
       @apply block absolute w-auto h-auto right-3 top-3;
       svg {
@@ -31,7 +34,7 @@
     .floating-sidebar_header {
       @apply w-full h-auto;
     }
-    .floating-sidebar_nav {
+    /* .floating-sidebar_nav {
       @apply flex flex-col gap-1;
       .floating-sidebar_nav-collapse {
         @apply flex flex-col gap-1 overflow-hidden;
@@ -84,7 +87,7 @@
           }
         }
       }
-    }
+    } */
     .floating-sidebar_section {
       @apply m-0 p-0;
       .floating-sidebar_section-content {

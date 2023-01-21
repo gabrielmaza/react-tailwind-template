@@ -1,6 +1,6 @@
 import React from "react";
-import FullImgCard from "./FullImgCard";
-import "./cards.css";
+import ImgMasonryCard from "../cards/ImgMasonryCard";
+import "./card-list.css";
 
 const featureProducts = [
   {
@@ -69,7 +69,7 @@ const featureProducts = [
   },
 ];
 
-interface FullImgCardListProps {
+interface ImgMasonryCardListProps {
   favoriteBtn?: boolean;
   deleteBtn?: boolean;
   updateBtn?: boolean;
@@ -80,7 +80,7 @@ interface FullImgCardListProps {
   date?: boolean;
 }
 
-const FullImgCardList = ({
+const ImgMasonryCardList = ({
   favoriteBtn = false,
   deleteBtn = false,
   updateBtn = false,
@@ -89,11 +89,11 @@ const FullImgCardList = ({
   commentsBtn = false,
   salesBtn = false,
   date = false,
-}: FullImgCardListProps) => {
+}: ImgMasonryCardListProps) => {
   return (
     <div className="full-img-card-list">
       {featureProducts.map((item) => (
-        <FullImgCard
+        <ImgMasonryCard
           key={item.id}
           img={item.img}
           title={item.title}
@@ -114,4 +114,4 @@ const FullImgCardList = ({
   );
 };
 
-export default FullImgCardList;
+export default ImgMasonryCardList;

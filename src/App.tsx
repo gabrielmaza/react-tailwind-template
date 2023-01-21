@@ -18,10 +18,10 @@ import About from "./pages/public/about/About.page";
 import PrivacyPolicy from "./pages/public/privacy-policy/PrivacyPolicy";
 import Search from "./pages/public/search/Search.page";
 import Error404 from "./pages/public/error/Error404.page";
-import Notifications from "./pages/private/notifications/Notifications";
+import Notifications from "./pages/private/notifications/Notifications.page";
 import NewProductForm from "./pages/private/new-product/NewProductForm.page";
 import Purchases from "./pages/private/purchase/Purchases.page";
-import MyProducts from "./pages/private/my-products/MyProducts";
+import MyProducts from "./pages/private/my-products/MyProducts.page";
 import Contact from "./pages/public/contact/Contact.page";
 import Support from "./pages/public/Support/Support.page";
 

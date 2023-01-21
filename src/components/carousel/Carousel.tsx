@@ -104,9 +104,9 @@ const Carousel = ({
             <Link
               to="/product"
               title="Product link"
-              className="absolute left-[70px] bottom-[40px] z-30 flex flex-col gap-4"
+              className="absolute w-full left-0 bottom-10 mx-auto text-center md:text-left px-2 md:px-12 z-20 flex flex-col gap-4"
             >
-              <span className="w-5/6 md:w-full text-sm sm:text-2xl font-bold text-white dark:text-white">
+              <span className="w-full md:w-3/6 text-sm sm:text-2xl font-bold text-white dark:text-white">
                 Lorem ipsum dolor sit amet consectetur adipisicing
               </span>
               <ButtonLink
@@ -123,7 +123,7 @@ const Carousel = ({
         {/* Slider indicators */}
         {indicatorsSection ? (
           <div
-            className="flex absolute bottom-3 left-1/2 z-30 space-x-3 -translate-x-1/2"
+            className="flex absolute bottom-3 left-1/2 z-20 space-x-3 -translate-x-1/2"
             ref={indicatorRef}
           >
             {images.map((item) => (

@@ -1,0 +1,21 @@
+{
+  "component": {
+    "header": {
+      "hello-world": "Hello world",
+      "login-label": "Log in",
+      "sign-in-label": "Sign in"
+    },
+    "breadcrumb": {
+      "home": "Home"
+    }
+  },
+  "page": {
+    "home": {
+      "title-latest": "Lates"
+    },
+    "comments": {
+      "tab-nav-title-1": "My comments",
+      "tab-nav-title-2": "From user"
+    }
+  }
+}

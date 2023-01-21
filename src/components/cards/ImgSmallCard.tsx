@@ -1,31 +1,32 @@
 import { ArrowNarrowRightIcon } from "@heroicons/react/solid";
 import React from "react";
+import { Link } from "react-router-dom";
 import ButtonLink from "../button/ButtonLink";
 import "./cards.css";
 
-interface ProductSmCardProps {
+interface ImgSmallCardProps {
   id: any;
   name: string;
-  price: string;
-  productUrl: string;
-  imgUrl: string;
-  imgTitle: string;
+  price?: any;
+  productUrl?: string;
+  imgUrl?: string;
+  imgTitle?: string;
 }
 
-const ProductSmCard = ({
+const ImgSmallCard = ({
   id,
   name,
   price,
   productUrl,
   imgUrl,
   imgTitle,
-}: ProductSmCardProps) => {
+}: ImgSmallCardProps) => {
   return (
     <>
-      <div className="product-sm-card_item">
-        <a href="#">
+      <div className="sm-card_item" key={id}>
+        <Link to="#" className="sm-card_item-link">
           <img className="rounded-t-lg mb-5" src={imgUrl} alt={imgTitle} />
-        </a>
+        </Link>
         <div className="px-5 pb-5">
           <a className="flex items-center mb-5" href="#">
             <h3 className="text-md font-semibold tracking-tight truncate text-gray-900 dark:text-white">
@@ -51,4 +52,4 @@ const ProductSmCard = ({
   );
 };
 
-export default ProductSmCard;
+export default ImgSmallCard;

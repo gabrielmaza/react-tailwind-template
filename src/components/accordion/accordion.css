@@ -1,0 +1,8 @@
+@import "../.././assets/styles/main.css";
+
+.accordion {
+  @apply flex flex-col gap-1;
+  .accordion_item-group {
+    @apply flex flex-col gap-0;
+  }
+}

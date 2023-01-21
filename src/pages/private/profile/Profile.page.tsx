@@ -6,18 +6,17 @@ import Footer from "../../../components/footer/Footer";
 import InputText from "../../../components/inputs/text/InputText";
 import Navbar from "../../../components/navbar/Navbar";
 import PageTitle from "../../../components/page-title/PageTitle";
-import Tabs from "../../../components/tabs/Tabs";
 
 const Profile = () => {
   return (
     <>
-      <Navbar navbarMenu navbarUserAvatar />
+      <Navbar navbarMenu navbarUserAvatar navbarLangSwitcher />
       <div className="py-6 px-4 flex flex-col gap-6 container-100vh-180">
         <div className="flex flex-col-reverse gap-6 lg:flex-row">
           <div className="main-container">
             <BreadCrumb />
             <PageTitle label="Perfil" />
-            <Tabs
+            {/* <Tabs
               tab1Title="My data"
               tab2Title="Billing"
               tab3Title="Validations"
@@ -318,7 +317,7 @@ const Profile = () => {
                   </div>
                 </div>
               }
-            />
+            /> */}
           </div>
         </div>
       </div>

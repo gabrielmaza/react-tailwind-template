@@ -1,7 +1,7 @@
 @import "../.././assets/styles/main.css";
 
-.sidebar_logo {
-  @apply w-full max-w-[100px];
+.brand_logo {
+  @apply w-full max-h-[16px] lg:max-h-[20px];
   .brand-logo_path {
     fill: white;
   }

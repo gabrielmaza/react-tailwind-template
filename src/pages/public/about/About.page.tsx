@@ -2,13 +2,13 @@ import { ArrowNarrowRightIcon } from "@heroicons/react/solid";
 import React from "react";
 import ButtonLink from "../../../components/button/ButtonLink";
 import Footer from "../../../components/footer/Footer";
-import Navbar from "../../../components/navbar/Navbar";
+import LandingNavbar from "../../../components/landing-navbar/LandingNavbar";
 import "./about.css";
 
 const About = () => {
   return (
     <>
-      <Navbar navbarLogBtn />
+      <LandingNavbar navbarMenu navbarLogBtn />
       <div className="about-wrapp">
         <div className="about-wrapp_main-section">
           <div className="w-full h-full flex items-center">

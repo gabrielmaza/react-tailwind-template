@@ -1,25 +1,26 @@
 import { XIcon } from "@heroicons/react/solid";
-import React, { useState } from "react";
+import React, { Children, ReactNode, useState } from "react";
 import "./floating-sidebar.css";
-import { FloatingSidebarNav } from "./FLoatingSidebarNav";
-import { FloatingSidebarContent } from "./FLoatingSidebarContent";
-import { FloatingSidebarSection } from "./FLoatingSidebarSection";
+import { FloatingSidebarNav } from "./FloatingSidebarNav";
+import { FloatingSidebarContent } from "./FloatingSidebarContent";
+import { FloatingSidebarSection } from "./FloatingSidebarSection";
+import NotificationCard from "../cards/NotificationCard";
 
-interface FLoatingSidebarProps {
+interface FloatingSidebarProps {
   toggleSidebar: any;
   handleClick: () => void;
   left?: boolean;
   right?: boolean;
-  title: string;
+  children: ReactNode;
 }
 
-const FLoatingSidebar = ({
+const FloatingSidebar = ({
   toggleSidebar,
   handleClick,
   left = false,
   right = false,
-  title,
-}: FLoatingSidebarProps) => {
+  children,
+}: FloatingSidebarProps) => {
   return (
     <div className="flex flex-auto flex-col">
       <div
@@ -35,9 +36,7 @@ const FLoatingSidebar = ({
           >
             <XIcon />
           </button>
-          <FloatingSidebarSection hrBottom>
-            <h2 className="floating-sidebar_title">{title}</h2>
-          </FloatingSidebarSection>
+          {children}
         </FloatingSidebarContent>
       </div>
       <div
@@ -50,4 +49,4 @@ const FLoatingSidebar = ({
   );
 };
 
-export default FLoatingSidebar;
+export default FloatingSidebar;

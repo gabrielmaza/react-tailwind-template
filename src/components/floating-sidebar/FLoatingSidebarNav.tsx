@@ -7,7 +7,7 @@ import {
   TableIcon,
   UserIcon,
 } from "@heroicons/react/solid";
-import { FloatingSidebarNavCollapse } from "./FLoatingSidebarNavCollapse";
+import { FloatingSidebarNavCollapse } from "./FloatingSidebarNavCollapse";
 import "./floating-sidebar.css";
 
 const productsNav = [

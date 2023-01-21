@@ -13,7 +13,7 @@ import Button from "../button/Button";
 import ButtonLink from "../button/ButtonLink";
 import "./cards.css";
 
-interface FullImgCardProps {
+interface ImgMasonryCardProps {
   img: string;
   title: string;
   subTitle: string;
@@ -29,7 +29,7 @@ interface FullImgCardProps {
   date?: boolean;
 }
 
-const FullImgCard = ({
+const ImgMasonryCard = ({
   img,
   title,
   subTitle,
@@ -43,10 +43,20 @@ const FullImgCard = ({
   commentsBtn = false,
   salesBtn = false,
   date = false,
-}: FullImgCardProps) => {
+}: ImgMasonryCardProps) => {
   return (
     <div className="full-img-card">
       <Link to="/product" title={title} className="relative block w-full">
+        <Link
+          to={url}
+          title={title}
+          className="absolute w-full px-3 pb-1 bottom-0"
+        >
+          <h2 className="truncate mb-2 text-sm md:text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+            nulla tenetur iste obcaecati.
+          </h2>
+        </Link>
         <img
           className="rounded-lg object-cover h-auto w-full"
           src={img}
@@ -96,12 +106,12 @@ const FullImgCard = ({
           </div>
         </div>
         <div>
-          <Link to={url} title={title}>
+          {/* <Link to={url} title={title}>
             <h2 className="truncate mb-2 text-sm md:text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Provident nulla tenetur iste obcaecati.
             </h2>
-          </Link>
+          </Link> */}
           <div className="w-full flex justify-end gap-1 flex-wrap">
             {favoriteBtn ? (
               <ButtonLink
@@ -158,4 +168,4 @@ const FullImgCard = ({
   );
 };
 
-export default FullImgCard;
+export default ImgMasonryCard;

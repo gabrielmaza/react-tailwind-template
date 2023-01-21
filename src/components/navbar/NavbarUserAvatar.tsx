@@ -2,8 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useHandleShow } from "../../hooks/useHandleShow";
 import useClickAwayDiv from "../../hooks/useClickAwayDiv";
+import Button from "../button/Button";
+import { UserCircleIcon, UserIcon } from "@heroicons/react/solid";
 
-export const NavbarUserAvatar = () => {
+interface NavbarUserAvatarProps {
+  userProfileImg?: string;
+}
+
+export const NavbarUserAvatar = ({ userProfileImg }: NavbarUserAvatarProps) => {
   const { show, handleChange, handleClose } = useHandleShow();
 
   const [divRef] = useClickAwayDiv<HTMLDivElement>(handleClose);
@@ -16,14 +22,18 @@ export const NavbarUserAvatar = () => {
         onClick={handleChange}
         aria-hidden
       >
-        <img
-          className="w-10 h-10 rounded-full"
-          src="./src/assets/img/people/profile-picture-1.jpg"
-          alt=""
-        />
-        <div className="flex flex-col font-medium dark:text-white">
+        {userProfileImg ? (
+          <img
+            className="w-10 h-10 rounded-full"
+            src={userProfileImg}
+            alt="User Profile img"
+          />
+        ) : (
+          <UserCircleIcon className="text-white bg-gray-400 cursor-pointer rounded-3xl w-10 h-10" />
+        )}
+        <div className="flex flex-col font-medium dark:text-white overflow-hidden">
           <span>Jese Leos</span>
-          <span className="text-sm text-gray-500 dark:text-gray-400">
+          <span className="text-sm text-gray-500 dark:text-gray-400 truncate">
             jeseleos@emailexample.com
           </span>
         </div>
@@ -67,13 +77,8 @@ export const NavbarUserAvatar = () => {
             </Link>
           </li>
         </ul>
-        <div className="py-1">
-          <button
-            type="button"
-            className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white cursor-pointer"
-          >
-            Sign out
-          </button>
+        <div className="py-2 px-4">
+          <Button color="transparent-bordered" type="button" label="Sign out" />
         </div>
       </div>
     </div>

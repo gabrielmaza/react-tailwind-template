@@ -1,0 +1,17 @@
+@import "../.././assets/styles/main.css";
+
+.ctoa-banner_wrapp-link {
+  @apply flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition-all;
+  .ctoa-banner_img {
+    @apply object-cover w-full h-96 rounded-t-lg md:h-[200px] md:w-[300px] md:rounded-none md:rounded-l-lg;
+  }
+  .ctoa-banner_body {
+    @apply flex flex-col justify-between p-4 lg:p-7 leading-normal;
+    .ctoa-banner_header {
+      @apply mb-2;
+    }
+    .ctoa-banner_content {
+      @apply mb-3;
+    }
+  }
+}
