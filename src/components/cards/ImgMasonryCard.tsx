@@ -16,8 +16,8 @@ import "./cards.css";
 interface ImgMasonryCardProps {
   img: string;
   title: string;
-  subTitle: string;
   price?: any;
+  offerPrice?: any;
   url: string;
   favoriteBtn?: boolean;
   deleteBtn?: boolean;
@@ -26,14 +26,15 @@ interface ImgMasonryCardProps {
   moreBtn?: boolean;
   commentsBtn?: boolean;
   salesBtn?: boolean;
-  date?: boolean;
+  date?: any;
+  currency?: string;
 }
 
 const ImgMasonryCard = ({
   img,
   title,
-  subTitle,
-  price = "?",
+  price = "00.00",
+  offerPrice = "00.00",
   url,
   favoriteBtn = false,
   deleteBtn = false,
@@ -43,36 +44,39 @@ const ImgMasonryCard = ({
   commentsBtn = false,
   salesBtn = false,
   date = false,
+  currency = "U$D",
 }: ImgMasonryCardProps) => {
   return (
-    <div className="full-img-card">
-      <Link to="/product" title={title} className="relative block w-full">
-        <Link
-          to={url}
-          title={title}
-          className="absolute w-full px-3 pb-1 bottom-0"
-        >
-          <h2 className="truncate mb-2 text-sm md:text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
-            nulla tenetur iste obcaecati.
-          </h2>
-        </Link>
-        <img
-          className="rounded-lg object-cover h-auto w-full"
-          src={img}
-          alt={`${title}img`}
-        />
+    <div className="masonry-img-card">
+      <Link to="/product" title={title} className="masonry-img-card_link">
+        <img className="masonry-img-card_img" src={img} alt={`${title}img`} />
+        <div className="masonry-img-card_text-group">
+          {date && <span className="masonry-img-card_date">{date}</span>}
+          <h2 className="masonry-img-card_title">{title}</h2>
+        </div>
       </Link>
-      <div className="relative p-2 w-full h-full flex flex-col justify-between">
-        <div className="w-full flex justify-beteen gap-1">
-          {date ? (
-            <div className="w-full m-2 flex gap-1">
-              <span className="text-sm">02 Jul</span>
+      <div className="relative px-0 pt-1 pb-3 w-full h-full flex flex-col justify-between">
+        <div className="w-full flex gap-1">
+          {price && (
+            <div className="w-1/2 m-2 flex items-center gap-1">
+              <span className="text-lg font-semibold whitespace-nowrap">
+                {currency}
+              </span>
+              {offerPrice != "00.00" && (
+                <span className="text-lg font-semibold whitespace-nowrap">
+                  {offerPrice}
+                </span>
+              )}
+              <span
+                className={`text-lg font-semibold whitespace-nowrap ${
+                  offerPrice != "00.00" && "masonry-img-card_old-price"
+                }`}
+              >
+                {price}
+              </span>
             </div>
-          ) : (
-            ""
           )}
-          <div className="w-full flex justify-end gap-1">
+          <div className="w-1/2 flex justify-end gap-1">
             {pauseBtn ? (
               <Button
                 color="transparent"
@@ -103,16 +107,6 @@ const ImgMasonryCard = ({
             ) : (
               ""
             )}
-          </div>
-        </div>
-        <div>
-          {/* <Link to={url} title={title}>
-            <h2 className="truncate mb-2 text-sm md:text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Provident nulla tenetur iste obcaecati.
-            </h2>
-          </Link> */}
-          <div className="w-full flex justify-end gap-1 flex-wrap">
             {favoriteBtn ? (
               <ButtonLink
                 label="234"
@@ -163,6 +157,7 @@ const ImgMasonryCard = ({
             )}
           </div>
         </div>
+        <div></div>
       </div>
     </div>
   );

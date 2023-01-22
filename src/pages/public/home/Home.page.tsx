@@ -12,11 +12,95 @@ import Spinner3 from "../../../components/spinner-animation/Spinner3";
 import { SidebarToggleBtn } from "../../../components/sidebar/SidebarToggleBtn";
 import { LayoutSimpleSlider } from "../../../components/layouts/LayoutSimpleSlider";
 import { useTranslation } from "react-i18next";
+import ImgMasonryCard from "../../../components/cards/ImgMasonryCard";
 
 const featureProducts = [
   "./src/assets/img/products/image-1.jpg",
   "./src/assets/img/products/image-2.jpg",
   "./src/assets/img/products/image-3.jpg",
+];
+
+const productsList = [
+  {
+    id: 1,
+    url: "#",
+    img: "./src/assets/img/products/image-1.jpg",
+    title: "Drone x-41 HD",
+    subtitle: "Lorem ipsum corem firum moren...",
+    price: 199.99,
+    offerPrice: "159.99",
+    date: "02 Jul 2022",
+  },
+  {
+    id: 2,
+    url: "#",
+    img: "./src/assets/img/products/image-2.jpg",
+    title: "Gamer optical mouse",
+    subtitle: "Lorem ipsum corem firum moren...",
+    price: 123.99,
+    offerPrice: "00.00",
+    date: "02 Jul 2022",
+  },
+  {
+    id: 3,
+    url: "#",
+    img: "./src/assets/img/products/image-3.jpg",
+    title: "Apple product",
+    subtitle: "Lorem ipsum corem firum moren...",
+    price: 234.99,
+    offerPrice: "00.00",
+    date: "02 Jul 2022",
+  },
+  {
+    id: 4,
+    url: "#",
+    img: "./src/assets/img/products/image-4.jpg",
+    title: "Headphones x-sound",
+    subtitle: "Lorem ipsum corem firum moren...",
+    price: 3434.99,
+    offerPrice: "00.00",
+    date: "02 Jul 2022",
+  },
+  {
+    id: 5,
+    url: "#",
+    img: "./src/assets/img/products/image-5.jpg",
+    title: "Lorem ipsum corem firum moren...",
+    subtitle: "Lorem ipsum corem firum moren...",
+    price: 939.99,
+    offerPrice: "00.00",
+    date: "02 Jul 2022",
+  },
+  {
+    id: 6,
+    url: "#",
+    img: "./src/assets/img/products/image-6.jpg",
+    title: "Lorem ipsum corem firum moren...",
+    subtitle: "Lorem ipsum corem firum moren...",
+    price: 856.99,
+    offerPrice: "00.00",
+    date: "02 Jul 2022",
+  },
+  {
+    id: 7,
+    url: "#",
+    img: "./src/assets/img/products/image-7.jpg",
+    title: "Lorem ipsum corem firum moren...",
+    subtitle: "Lorem ipsum corem firum moren...",
+    price: 135.99,
+    offerPrice: "00.00",
+    date: "02 Jul 2022",
+  },
+  {
+    id: 8,
+    url: "#",
+    img: "./src/assets/img/products/image-1.jpg",
+    title: "Lorem ipsum corem firum moren...",
+    subtitle: "Lorem ipsum corem firum moren...",
+    price: 246.0,
+    offerPrice: "00.00",
+    date: "02 Jul 2022",
+  },
 ];
 
 const Home = () => {
@@ -73,7 +157,21 @@ const Home = () => {
                     <InputSearch />
                   </div>
                   <PageTitle label="Latest" />
-                  <ImgMasonryCardList favoriteBtn moreBtn salesBtn />
+                  <ImgMasonryCardList>
+                    {productsList.map((item) => (
+                      <ImgMasonryCard
+                        key={item.id}
+                        img={item.img}
+                        title={item.title}
+                        price={item.price}
+                        offerPrice={item.offerPrice}
+                        url={item.url}
+                        favoriteBtn
+                        salesBtn
+                        date={item.date}
+                      />
+                    ))}
+                  </ImgMasonryCardList>
                   <Paginator />
                 </div>
               </div>

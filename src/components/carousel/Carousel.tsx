@@ -106,7 +106,7 @@ const Carousel = ({
               title="Product link"
               className="absolute w-full left-0 bottom-10 mx-auto text-center md:text-left px-2 md:px-12 z-20 flex flex-col gap-4"
             >
-              <span className="w-full md:w-3/6 text-sm sm:text-2xl font-bold text-white dark:text-white">
+              <span className="w-full md:w-3/6 text-sm sm:text-2xl lg:text-3xl font-bold text-white dark:text-white">
                 Lorem ipsum dolor sit amet consectetur adipisicing
               </span>
               <ButtonLink
