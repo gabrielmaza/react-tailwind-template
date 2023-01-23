@@ -5,8 +5,8 @@ import ButtonLink from "../button/ButtonLink";
 import "./cards.css";
 
 interface ImgSmallCardProps {
-  id: any;
-  name: string;
+  id?: any;
+  title: string;
   price?: any;
   productUrl?: string;
   imgUrl?: string;
@@ -15,7 +15,7 @@ interface ImgSmallCardProps {
 
 const ImgSmallCard = ({
   id,
-  name,
+  title,
   price,
   productUrl,
   imgUrl,
@@ -30,7 +30,7 @@ const ImgSmallCard = ({
         <div className="px-5 pb-5">
           <a className="flex items-center mb-5" href="#">
             <h3 className="text-md font-semibold tracking-tight truncate text-gray-900 dark:text-white">
-              {name}
+              {title}
             </h3>
           </a>
           <div className="flex justify-between items-center">

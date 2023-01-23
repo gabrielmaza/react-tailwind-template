@@ -14,6 +14,7 @@ import ButtonLink from "../button/ButtonLink";
 import "./cards.css";
 
 interface ImgMasonryCardProps {
+  id?: any;
   img: string;
   title: string;
   price?: any;
@@ -28,13 +29,16 @@ interface ImgMasonryCardProps {
   salesBtn?: boolean;
   date?: any;
   currency?: string;
+  category?: string;
+  offer?: boolean;
 }
 
 const ImgMasonryCard = ({
+  id,
   img,
   title,
   price = "00.00",
-  offerPrice = "00.00",
+  offerPrice,
   url,
   favoriteBtn = false,
   deleteBtn = false,
@@ -45,6 +49,8 @@ const ImgMasonryCard = ({
   salesBtn = false,
   date = false,
   currency = "U$D",
+  category,
+  offer = false,
 }: ImgMasonryCardProps) => {
   return (
     <div className="masonry-img-card">
@@ -54,29 +60,37 @@ const ImgMasonryCard = ({
           {date && <span className="masonry-img-card_date">{date}</span>}
           <h2 className="masonry-img-card_title">{title}</h2>
         </div>
+        <div className="absolute w-auto rounded-sm flex items-center left-3 top-3 px-2 py-1 z-10 whitespace-nowrap bg-slate-700">
+          <span className="text-xs text-white uppercase">{category}</span>
+        </div>
+        {offer && (
+          <div className="absolute w-auto rounded-sm flex items-center right-3 top-3 px-2 py-1 z-10 whitespace-nowrap bg-green-600">
+            <span className="text-xs text-white uppercase">SALE</span>
+          </div>
+        )}
       </Link>
       <div className="relative px-0 pt-1 pb-3 w-full h-full flex flex-col justify-between">
-        <div className="w-full flex gap-1">
+        <div className="w-full flex items-center gap-1">
           {price && (
             <div className="w-1/2 m-2 flex items-center gap-1">
-              <span className="text-lg font-semibold whitespace-nowrap">
+              <span className="text-lg font-semibold whitespace-nowrap leading-none">
                 {currency}
               </span>
-              {offerPrice != "00.00" && (
-                <span className="text-lg font-semibold whitespace-nowrap">
+              {offerPrice > 0 && (
+                <span className="text-lg font-semibold whitespace-nowrap leading-none">
                   {offerPrice}
                 </span>
               )}
               <span
-                className={`text-lg font-semibold whitespace-nowrap ${
-                  offerPrice != "00.00" && "masonry-img-card_old-price"
+                className={`text-lg font-semibold whitespace-nowrap leading-none ${
+                  offerPrice > 0 && "masonry-img-card_old-price"
                 }`}
               >
                 {price}
               </span>
             </div>
           )}
-          <div className="w-1/2 flex justify-end gap-1">
+          <div className="w-1/2 flex items-center justify-end gap-1">
             {pauseBtn ? (
               <Button
                 color="transparent"

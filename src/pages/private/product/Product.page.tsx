@@ -13,158 +13,10 @@ import CallToActionBanner from "../../../components/calltoaction-banner/CallToAc
 import { CallToActionBannerBody } from "../../../components/calltoaction-banner/CallToActionBannerP";
 import { CallToActionBannerHeader } from "../../../components/calltoaction-banner/CallToActionBannerHeader";
 import { CheckIcon } from "@heroicons/react/solid";
-
-const productsData = [
-  {
-    id: "1",
-    name: "This is a fancy product name 1",
-    price: "456.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-1.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "2",
-    name: "This is a fancy product name 2",
-    price: "6345.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-2.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "3",
-    name: "This is a fancy product name 3",
-    price: "1764.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-3.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "4",
-    name: "This is a fancy product name 4",
-    price: "344.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-4.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "5",
-    name: "This is a fancy product name 5",
-    price: "454.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-5.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "6",
-    name: "This is a fancy product name 6",
-    price: "1128.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-6.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "7",
-    name: "This is a fancy product name 7",
-    price: "344.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-7.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "8",
-    name: "This is a fancy product name 8",
-    price: "454.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-1.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "9",
-    name: "This is a fancy product name 9",
-    price: "1128.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-2.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-];
-
-const SimilarProductsData = [
-  {
-    id: "1",
-    name: "This is a fancy product name 1",
-    price: "456.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-7.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "2",
-    name: "This is a fancy product name 2",
-    price: "6345.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-6.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "3",
-    name: "This is a fancy product name 3",
-    price: "1764.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-5.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "4",
-    name: "This is a fancy product name 4",
-    price: "344.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-4.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "5",
-    name: "This is a fancy product name 5",
-    price: "454.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-3.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "6",
-    name: "This is a fancy product name 6",
-    price: "1128.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-2.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "7",
-    name: "This is a fancy product name 7",
-    price: "344.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-1.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "8",
-    name: "This is a fancy product name 8",
-    price: "454.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-7.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-  {
-    id: "9",
-    name: "This is a fancy product name 9",
-    price: "1128.99",
-    productUrl: "#",
-    imgUrl: "./src/assets/img/products/image-6.jpg",
-    imgTitle: "This is a fancy img title",
-  },
-];
+import data from "../../../data/productsList.json";
 
 const Product = () => {
+  const productsDataList = data;
   // Modal actions
   const [showModal, setShowModal] = useState(false);
   const handleChange = () => {
@@ -190,32 +42,30 @@ const Product = () => {
               </div>
             </div>
             <CardsWideList title="Best Sellers">
-              {productsData.map(
-                ({ id, name, price, productUrl, imgUrl, imgTitle }) => (
-                  <ImgSmallCard
-                    id={id}
-                    name={name}
-                    price={price}
-                    productUrl={productUrl}
-                    imgUrl={imgUrl}
-                    imgTitle={imgTitle}
-                  />
-                )
-              )}
+              {productsDataList.map(({ id, title, price, url, img }) => (
+                <ImgSmallCard
+                  key={id}
+                  id={id}
+                  title={title}
+                  price={price}
+                  productUrl={url}
+                  imgUrl={img}
+                  imgTitle={title}
+                />
+              ))}
             </CardsWideList>
             <CardsWideList title="similar products">
-              {SimilarProductsData.map(
-                ({ id, name, price, productUrl, imgUrl, imgTitle }) => (
-                  <ImgSmallCard
-                    id={id}
-                    name={name}
-                    price={price}
-                    productUrl={productUrl}
-                    imgUrl={imgUrl}
-                    imgTitle={imgTitle}
-                  />
-                )
-              )}
+              {productsDataList.map(({ id, title, price, url, img }) => (
+                <ImgSmallCard
+                  key={id}
+                  id={id}
+                  title={title}
+                  price={price}
+                  productUrl={url}
+                  imgUrl={img}
+                  imgTitle={title}
+                />
+              ))}
             </CardsWideList>
 
             <CallToActionBanner>

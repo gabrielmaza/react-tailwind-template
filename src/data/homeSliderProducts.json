@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "url": "#",
+    "img": "./src/assets/img/products/image-1.jpg",
+    "title": "Drone x-41 HD",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 199.99,
+    "offerPrice": 159.99,
+    "date": "02 Jul 2022",
+    "category": "Drone",
+    "offer": true
+  },
+  {
+    "id": 2,
+    "url": "#",
+    "img": "./src/assets/img/products/image-2.jpg",
+    "title": "Gamer optical mouse",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 123.99,
+    "offerprice": 0,
+    "date": "02 Jul 2022",
+    "category": "Mouse",
+    "offer": false
+  },
+  {
+    "id": 3,
+    "url": "#",
+    "img": "./src/assets/img/products/image-3.jpg",
+    "title": "Apple product",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 234.99,
+    "offerprice": 0,
+    "date": "02 Jul 2022",
+    "category": "Laptop",
+    "offer": false
+  }
+]

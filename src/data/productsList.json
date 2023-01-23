@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "url": "#",
+    "img": "./src/assets/img/products/image-1.jpg",
+    "title": "Drone x-41 HD",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 199.99,
+    "offerPrice": 159.99,
+    "date": "02 Jul 2022",
+    "category": "Drone",
+    "offer": true
+  },
+  {
+    "id": 2,
+    "url": "#",
+    "img": "./src/assets/img/products/image-2.jpg",
+    "title": "Gamer optical mouse",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 123.99,
+    "offerprice": 0,
+    "date": "02 Jul 2022",
+    "category": "Mouse",
+    "offer": false
+  },
+  {
+    "id": 3,
+    "url": "#",
+    "img": "./src/assets/img/products/image-3.jpg",
+    "title": "Apple product",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 234.99,
+    "offerprice": 0,
+    "date": "02 Jul 2022",
+    "category": "Laptop",
+    "offer": false
+  },
+  {
+    "id": 4,
+    "url": "#",
+    "img": "./src/assets/img/products/image-4.jpg",
+    "title": "Headphones x-sound",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 3434.99,
+    "offerprice": 0,
+    "date": "02 Jul 2022",
+    "category": "Headphone",
+    "offer": false
+  },
+  {
+    "id": 5,
+    "url": "#",
+    "img": "./src/assets/img/products/image-5.jpg",
+    "title": "iPad apple pro sale",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 939.99,
+    "offerprice": 899,
+    "date": "02 Jul 2022",
+    "category": "Tablet",
+    "offer": true
+  },
+  {
+    "id": 6,
+    "url": "#",
+    "img": "./src/assets/img/products/image-6.jpg",
+    "title": "Electronic gadgets",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 856.99,
+    "offerprice": 0,
+    "date": "02 Jul 2022",
+    "category": "Headphone",
+    "offer": false
+  },
+  {
+    "id": 7,
+    "url": "#",
+    "img": "./src/assets/img/products/image-7.jpg",
+    "title": "Tech kit laptop, tablet and phone",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 135.99,
+    "offerprice": 0,
+    "date": "02 Jul 2022",
+    "category": "Laptop",
+    "offer": false
+  },
+  {
+    "id": 8,
+    "url": "#",
+    "img": "./src/assets/img/products/image-1.jpg",
+    "title": "Racer drone ultra",
+    "subtitle": "Lorem ipsum corem firum moren...",
+    "price": 246.0,
+    "offerprice": 220.0,
+    "date": "02 Jul 2022",
+    "category": "Drone",
+    "offer": true
+  }
+]

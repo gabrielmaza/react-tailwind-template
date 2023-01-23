@@ -32,13 +32,13 @@
       background: -webkit-linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0) 40%,
         rgba(0, 0, 0, 0)
       );
       background: linear-gradient(
         0deg,
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0) 40%,
         rgba(0, 0, 0, 0)
       );
       box-sizing: border-box;
