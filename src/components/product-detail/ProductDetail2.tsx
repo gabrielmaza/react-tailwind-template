@@ -5,24 +5,12 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import MyModal from "../modal/modal";
 import ModalLightbox from "../modal/ModalLightbox";
-import { ProductDetailData } from "../../data/ProductDetail";
 
-const images = [
-  {
-    id: 1,
-    url: "./src/assets/img/products/phone/phone-1.jpg",
-  },
-  {
-    id: 2,
-    url: "./src/assets/img/products/phone/phone-2.jpg",
-  },
-  {
-    id: 3,
-    url: "./src/assets/img/products/phone/phone-3.jpg",
-  },
-];
+interface ProductDetail2Props {
+  data: any;
+}
 
-const ProductDetail2 = () => {
+const ProductDetail2 = ({ data }: ProductDetail2Props) => {
   // Modal actions
   const [showModal, setShowModal] = useState(false);
   const handleChange = () => {
@@ -55,7 +43,7 @@ const ProductDetail2 = () => {
         </div>
 
         <Carousel showArrows={true} showIndicators={false} infiniteLoop={true}>
-          {ProductDetailData.map((image, index) => (
+          {data.map((image, index) => (
             <div className="cursor-pointer" onClick={handleChange} aria-hidden>
               <img key={index} src={image.url} />
             </div>
@@ -126,7 +114,7 @@ const ProductDetail2 = () => {
               showIndicators={false}
               infiniteLoop={true}
             >
-              {ProductDetailData.map((image, index) => (
+              {data.map((image, index) => (
                 <img key={index} src={image.url} />
               ))}
             </Carousel>
