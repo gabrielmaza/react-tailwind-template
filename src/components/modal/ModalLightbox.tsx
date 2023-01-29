@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import "./modal.css";
 import useClickAwayDiv from "../../hooks/useClickAwayDiv";
 import Button from "../button/Button";
@@ -8,11 +8,15 @@ import CarouselLightbox from "../carousel/CarouselLightbox";
 interface ModalLightboxProps {
   show: boolean;
   closeFunction: () => void;
+  children: ReactNode;
 }
 
-const ModalLightbox = ({ show, closeFunction }: ModalLightboxProps) => {
+const ModalLightbox = ({
+  show,
+  closeFunction,
+  children,
+}: ModalLightboxProps) => {
   const [divRef] = useClickAwayDiv<HTMLDivElement>(closeFunction);
-
   return (
     <>
       {/* Main modal */}
@@ -32,7 +36,8 @@ const ModalLightbox = ({ show, closeFunction }: ModalLightboxProps) => {
                 customClass="m-3"
               />
             </div>
-            <CarouselLightbox />
+            {children}
+            {/* <CarouselLightbox /> */}
           </div>
         </div>
       </div>

@@ -13,10 +13,10 @@ import CallToActionBanner from "../../../components/calltoaction-banner/CallToAc
 import { CallToActionBannerBody } from "../../../components/calltoaction-banner/CallToActionBannerP";
 import { CallToActionBannerHeader } from "../../../components/calltoaction-banner/CallToActionBannerHeader";
 import { CheckIcon } from "@heroicons/react/solid";
-import data from "../../../data/productsList.json";
+import { ProductsData } from "../../../data/productsList";
 
 const Product = () => {
-  const productsDataList = data;
+  const productsDataList = ProductsData;
   // Modal actions
   const [showModal, setShowModal] = useState(false);
   const handleChange = () => {

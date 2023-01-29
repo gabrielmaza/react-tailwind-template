@@ -16,24 +16,13 @@
   }
 }
 
-.main-carrusel {
-  @apply relative;
-  .main-carrusel_img-wrapp {
-    @apply text-center duration-700 ease-in-out transition-all;
+.main-carousel {
+  @apply h-[280px] md:h-[380px] lg:h-[420px] relative;
+  .main-carousel_img-wrapp {
+    @apply relative h-full text-center rounded-lg overflow-hidden;
     &::before {
       content: "";
-      background: -webkit-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0) 60%,
-        rgba(0, 0, 0, 0)
-      );
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0) 60%,
-        rgba(0, 0, 0, 0)
-      );
+      background: rgb(8, 0, 22);
       box-sizing: border-box;
       position: absolute;
       bottom: 0;
@@ -43,6 +32,87 @@
       -webkit-transition: background-color 0.3s ease;
       transition: background-color 0.3s ease;
       z-index: 10;
+      background: -webkit-linear-gradient(
+        0deg,
+        rgba(15, 23, 42, 1) 0%,
+        rgba(15, 23, 42, 0.6) 35%,
+        rgba(15, 23, 42, 0) 100%
+      );
+      background: linear-gradient(
+        0deg,
+        rgba(15, 23, 42, 1) 0%,
+        rgba(15, 23, 42, 0.6) 35%,
+        rgba(15, 23, 42, 0) 100%
+      );
+      @media (min-width: 768px) {
+        background: -webkit-linear-gradient(
+          90deg,
+          rgba(15, 23, 42, 1) 0%,
+          rgba(15, 23, 42, 0.6) 35%,
+          rgba(15, 23, 42, 0) 100%
+        );
+        background: linear-gradient(
+          90deg,
+          rgba(15, 23, 42, 1) 0%,
+          rgba(15, 23, 42, 0.6) 35%,
+          rgba(15, 23, 42, 0) 100%
+        );
+      }
+    }
+    .main-carousel_img {
+      @apply absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-full h-full object-cover overflow-hidden rounded-lg;
+      opacity: 0;
+      transition-duration: 0.4s ease;
+      transition-delay: 0.2s;
+      &.active {
+        opacity: 1;
+        transition-duration: 1s;
+      }
+    }
+    .main-carousel_link {
+      @apply hidden absolute w-full h-[85%] md:h-full md:w-1/2 left-0 mx-auto text-center md:text-left px-2 md:px-16 z-20 flex-col justify-end md:justify-center md:gap-3;
+      &.active {
+        display: flex;
+      }
+      .main-carousel_title {
+        @apply hidden w-full text-base sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold text-white dark:text-white;
+        &.active {
+          display: block;
+          animation: carouselFadeInLeft 0.67s
+            cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal;
+        }
+      }
+      .main-carousel_subtitle {
+        @apply hidden w-full text-sm md:mb-2 sm:text-base lg:text-lg font-thin text-white dark:text-white;
+        &.active {
+          display: block;
+          animation: carouselFadeInLeft 0.77s
+            cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal;
+        }
+      }
+      .main-carousel_btn-link {
+        @apply hidden;
+        &.active {
+          @apply md:flex;
+          animation: carouselFadeInLeft 0.92s
+            cubic-bezier(0.92, -0.01, 0.1, 0.99) 0s 1 normal;
+        }
+      }
+    }
+    .main-carousel_control-btn {
+      @apply w-auto h-auto absolute top-1/2 space-y-3 -translate-y-1/2 z-20 rounded-full mx-2 cursor-pointer focus:outline-none;
+      &.before {
+        @apply left-0;
+      }
+      &.next {
+        @apply right-0;
+      }
+    }
+  }
+  .main-carousel_control-bullets-wrapp {
+    @apply flex absolute bottom-3 left-1/2 z-20 space-x-3 -translate-x-1/2;
+    .main-carousel_control-bullets {
+      @apply w-3 h-3 rounded-full z-20;
     }
   }
 }
@@ -50,4 +120,70 @@
 .carousel-lightbox_wrapp {
   @apply relative;
   height: calc(100vh - 80px);
+}
+.lightbox-modal {
+  .carousel-root {
+    height: calc(100vh - 56px);
+    width: auto;
+    padding: 10px;
+    .carousel {
+      &.carousel-slider {
+        width: auto;
+        height: calc(100% - 90px);
+        .slider-wrapper {
+          height: 100%;
+          .slider {
+            height: 100%;
+            .slide {
+              height: 100%;
+              img {
+                height: 100%;
+                width: auto;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* react-responsive-carousel */
+.carousel-root {
+  .carousel {
+    .slider-wrapper {
+      @apply rounded-lg overflow-hidden;
+    }
+    .control-arrow {
+      @apply h-[90px] w-[42px] flex items-center space-x-3 -translate-y-1/2 m-2;
+      top: 50% !important;
+      background: rgba(0, 0, 0, 0.2);
+      &:hover {
+        background: rgba(0, 0, 0, 0.3);
+      }
+    }
+    .carousel-status {
+      @apply text-base font-semibold mx-2;
+      text-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+    }
+    .thumbs-wrapper {
+      .thumbs {
+        .thumb {
+          &.selected {
+            @apply border-4 border-solid border-green-300;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes carouselFadeInLeft {
+  0% {
+    transform: translateX(calc(-100% - 80px));
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

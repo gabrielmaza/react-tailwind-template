@@ -1,9 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../button/Button";
 import { ChevronRightIcon, HeartIcon, ShareIcon } from "@heroicons/react/solid";
-import ProductDetailCarousel from "../carousel/ProductDetailCarousel";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import MyModal from "../modal/modal";
+import ModalLightbox from "../modal/ModalLightbox";
+
+const images = [
+  {
+    id: 1,
+    url: "./src/assets/img/products/phone/phone-1.jpg",
+  },
+  {
+    id: 2,
+    url: "./src/assets/img/products/phone/phone-2.jpg",
+  },
+  {
+    id: 3,
+    url: "./src/assets/img/products/phone/phone-3.jpg",
+  },
+];
 
 const ProductDetail2 = () => {
+  // Modal actions
+  const [showModal, setShowModal] = useState(false);
+  const handleChange = () => {
+    setShowModal(!showModal);
+  };
+  const handleClose = () => {
+    setShowModal(false);
+  };
   return (
     <>
       <div className="flex flex-col gap-4">
@@ -26,11 +52,15 @@ const ProductDetail2 = () => {
             />
           </div>
         </div>
-        <ProductDetailCarousel
-          width="w-full"
-          height="h-[420px]"
-          indicatorsSection
-        />
+
+        <Carousel showArrows={true} showIndicators={false} infiniteLoop={true}>
+          {images.map((image, index) => (
+            <div className="cursor-pointer" onClick={handleChange} aria-hidden>
+              <img key={index} src={image.url} />
+            </div>
+          ))}
+        </Carousel>
+
         <div className="flex gap-3">
           <div className="w-full md:w-7/12 flex flex-col gap-3">
             <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
@@ -88,6 +118,19 @@ const ProductDetail2 = () => {
           ea. Voluptatem laudantium officiis accusantium explicabo neque esse
           dolores molestias voluptatibus.
         </p>
+        <MyModal show={showModal} closeFunction={handleClose}>
+          <ModalLightbox closeFunction={handleClose} show={showModal}>
+            <Carousel
+              showArrows={true}
+              showIndicators={false}
+              infiniteLoop={true}
+            >
+              {images.map((image, index) => (
+                <img key={index} src={image.url} />
+              ))}
+            </Carousel>
+          </ModalLightbox>
+        </MyModal>
       </div>
     </>
   );
