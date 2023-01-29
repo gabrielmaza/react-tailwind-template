@@ -5,6 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import MyModal from "../modal/modal";
 import ModalLightbox from "../modal/ModalLightbox";
+import { ProductDetailData } from "../../data/ProductDetail";
 
 const images = [
   {
@@ -54,7 +55,7 @@ const ProductDetail2 = () => {
         </div>
 
         <Carousel showArrows={true} showIndicators={false} infiniteLoop={true}>
-          {images.map((image, index) => (
+          {ProductDetailData.map((image, index) => (
             <div className="cursor-pointer" onClick={handleChange} aria-hidden>
               <img key={index} src={image.url} />
             </div>
@@ -125,7 +126,7 @@ const ProductDetail2 = () => {
               showIndicators={false}
               infiniteLoop={true}
             >
-              {images.map((image, index) => (
+              {ProductDetailData.map((image, index) => (
                 <img key={index} src={image.url} />
               ))}
             </Carousel>
