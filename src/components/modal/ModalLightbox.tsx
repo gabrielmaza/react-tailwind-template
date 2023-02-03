@@ -3,7 +3,6 @@ import "./modal.css";
 import useClickAwayDiv from "../../hooks/useClickAwayDiv";
 import Button from "../button/Button";
 import { XIcon } from "@heroicons/react/solid";
-import CarouselLightbox from "../carousel/CarouselLightbox";
 
 interface ModalLightboxProps {
   show: boolean;
@@ -37,7 +36,6 @@ const ModalLightbox = ({
               />
             </div>
             {children}
-            {/* <CarouselLightbox /> */}
           </div>
         </div>
       </div>

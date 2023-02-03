@@ -15,11 +15,8 @@ import { CallToActionBannerHeader } from "../../../components/calltoaction-banne
 import { CheckIcon } from "@heroicons/react/solid";
 import { ProductsData } from "../../../data/productsList";
 import { ProductDetailData } from "../../../data/ProductDetail";
-import { ProductDetailData2 } from "../../../data/ProductDetail";
 
 const Product = () => {
-  console.log(ProductDetailData2[1]);
-
   const productsDataList = ProductsData;
   // Modal actions
   const [showModal, setShowModal] = useState(false);
@@ -39,7 +36,7 @@ const Product = () => {
             <BreadCrumb />
             <div className="flex flex-col lg:flex-row gap-6">
               <div className="w-full lg:w-4/6 max-w-full flex flex-col gap-6">
-                <ProductDetail2 data={ProductDetailData2} />
+                <ProductDetail2 data={ProductDetailData} id={2} />
               </div>
               <div className="flex flex-col gap-4 p-6 w-full lg:w-2/6 max-w-full divide-y divide-gray-400 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <ProductDetailSidebar />

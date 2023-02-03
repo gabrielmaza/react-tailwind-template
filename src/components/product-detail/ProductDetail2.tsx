@@ -8,9 +8,13 @@ import ModalLightbox from "../modal/ModalLightbox";
 
 interface ProductDetail2Props {
   data: any;
+  id: any;
 }
 
-const ProductDetail2 = ({ data }: ProductDetail2Props) => {
+const ProductDetail2 = ({ data, id }: ProductDetail2Props) => {
+  const product = id - 1;
+  const productImg = data[product].images;
+
   // Modal actions
   const [showModal, setShowModal] = useState(false);
   const handleChange = () => {
@@ -43,9 +47,9 @@ const ProductDetail2 = ({ data }: ProductDetail2Props) => {
         </div>
 
         <Carousel showArrows={true} showIndicators={false} infiniteLoop={true}>
-          {data.map((image, index) => (
+          {productImg.map((image, index) => (
             <div className="cursor-pointer" onClick={handleChange} aria-hidden>
-              <img key={index} src={image.url} />
+              <img key={index} src={image} />
             </div>
           ))}
         </Carousel>
@@ -114,8 +118,8 @@ const ProductDetail2 = ({ data }: ProductDetail2Props) => {
               showIndicators={false}
               infiniteLoop={true}
             >
-              {data.map((image, index) => (
-                <img key={index} src={image.url} />
+              {productImg.map((image, index) => (
+                <img key={index} src={image} />
               ))}
             </Carousel>
           </ModalLightbox>
